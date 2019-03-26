@@ -7,14 +7,15 @@
 ; Exit        : Reg Q = converted hexdecimal string
 ; Destroys    : none
 ; Calls       : none
-; Description : Convert word to ASCII hexdecimal
+; Description : Convert word to ASCII hexdecimal (only works for HD6309 chip)
 ;------------------------------------------------------------------------------
+  ifpragma 6309
 word2asciihex       tfr a,e
                     tfr b,a
                     bsr byte2asciihex
                     exg d,w
                     ;bra byte2asciihex
-
+  endc
 
 ;------------------------------------------------------------------------------
 ; Function    : byte2asciihex
