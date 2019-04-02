@@ -38,10 +38,12 @@ clry                MACRO
                     endc
                     ENDM
 
+                    ifpragma no6309conv
 clrq                MACRO
                     clrd
                     clrw
                     ENDM
+                    endc
 
 tstu                MACRO
                     ifpragma 6809
