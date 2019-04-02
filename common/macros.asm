@@ -1,6 +1,7 @@
 ; macros.asm
                     *pragmapush list        ; Save state of list pragma
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
+                    ifndef MACROS_DEFS      ; Load macros only once
 
 
 ; space savings macros
@@ -71,5 +72,7 @@ tstq                macro
                     endm
                     endc
 
+MACROS_DEFS         equ 1                   ; Set flag for macros being loaded
+                    endc
 
                     *pragmapop list         ; restore assembly listing to previous state
