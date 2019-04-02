@@ -63,9 +63,11 @@ tsty                MACRO
                     endc
                     ENDM
 
+                    ifpragma no6309conv
 tstq                MACRO
                     stq -4,s
                     ENDM
+                    endc
 
 
                     *pragmapop list         ; restore assembly listing to previous state
