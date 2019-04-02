@@ -231,7 +231,7 @@ SDC_EXT_GLOBAL          equ 'g              ; (0x67) Set global Flags
 SDC_STR_DIR_LIST        equ "L:             ; (0x4c3a) Initiate directory Listing
 SDC_STR_CD              equ "D:             ; (0x443a) Set current directory
 SDC_STR_NEW_DIR         equ "K:             ; (0x4b3a) Create new directory
-SDC_STR_DELETE          equ "X:             ; (0x583a) Delete file or directory
+SDC_STR_DELETE          equ "X:             ; (0x583a) Deletes file or an empty directory
 SDC_STR_MOUNT           equ "M:             ; (0x4d3a) Mount image
 SDC_STR_MOUNT_NEW       equ "N:             ; (0x4e3a) Mount new image (create image if not present)
 SDC_STR_CURRENT_PATH    equ '.*256+0        ; (0x2e00) Current path location
