@@ -221,6 +221,7 @@ SDC_CMD_ABORT           equ $D0             ; Abort I/O command
 SDC_CMD_EXT_DATA        equ $E0             ; Extended command with data block
 
 ; CoCo SDC Extended Commands
+SDC_EXT_CURRENT_DIR     equ 'C              ; (0x43) Get current directory
 SDC_EXT_INFO            equ 'I              ; () Get Info for mounted image
 SDC_EXT_QUERY           equ 'Q              ; () Query the size of DSK image
 SDC_EXT_DIR_PAGE        equ '>              ; (0x3e) Directory page
