@@ -4,71 +4,71 @@
 
 
 ; space savings macros
-skip_one_byte       MACRO
+skip_one_byte       macro
                     fcb $c5                 ; actually a BITB #$xx instruction (2 clocks)
-                    ENDM
+                    endm
 
-skip_two_bytes      MACRO
+skip_two_bytes      macro
                     fcb $8c                 ; actually a CMPX #$xxxx instruction (3 clocks)
-                    ENDM
+                    endm
 
 
 ; convenient macros
-disable_interrupts  MACRO
+disable_interrupts  macro
                     orcc #$50
-                    ENDM
+                    endm
 
-enable_interrupts   MACRO
+enable_interrupts   macro
                     andcc #$af
-                    ENDM
+                    endm
 
-clru                MACRO
+clru                macro
                     ldu #0
-                    ENDM
+                    endm
 
-clrx                MACRO
+clrx                macro
                     ldx #0
-                    ENDM
+                    endm
 
-clry                MACRO
+clry                macro
                     ifpragma 6809
                       ldy #0
                     else
                       tfr 0,y
                     endc
-                    ENDM
+                    endm
 
                     ifpragma no6309conv
-clrq                MACRO
+clrq                macro
                     clrd
                     clrw
-                    ENDM
+                    endm
                     endc
 
-tstu                MACRO
+tstu                macro
                     ifpragma 6809
                       cmpu #0
                     else
                       cmpr u,0
                     endc
-                    ENDM
+                    endm
 
-tstx                MACRO
+tstx                macro
                     cmpx #0
-                    ENDM
+                    endm
 
-tsty                MACRO
+tsty                macro
                     ifpragma 6809
                       cmpy #0
                     else
                       cmpr y,0
                     endc
-                    ENDM
+                    endm
 
                     ifpragma no6309conv
-tstq                MACRO
+tstq                macro
                     stq -4,s
-                    ENDM
+                    endm
                     endc
 
 
