@@ -5,7 +5,7 @@
                         *pragmapush list    ; Save state of list pragma
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
 
-  ifndef COCO3_DEFS                         ; Load defines only once
+                        ifndef COCO3_DEFS   ; Load defines only once
 
 
 ; Useful definations
@@ -625,6 +625,6 @@ RESET_VECTOR            equ $fffe           ; RESET -> $8C1B
 
 
 COCO3_DEFS              equ 1               ; Set flag for defines being loaded
- ENDC
+                        endc
 
                         *pragmapop list     ; restore assembly listing to previous state
