@@ -575,16 +575,27 @@ GIME_PALETTE            equ $ffb0           ; Color palette registers (16 bytes)
                                             ; To avoid, change palette registers in VSYNC or HSYNC.
 
 
-SAM_V0                  equ $ffc0           ; Graphics mode V0
-SAM_V1                  equ $ffc2           ;  "        "   V1
-SAM_V2                  equ $ffc4           ;  "        "   V2
-SAM_F0                  equ $ffc6           ; Graphics offset F0
-SAM_F1                  equ $ffc8           ;  "        "     F1
-SAM_F2                  equ $ffca           ;  "        "     F2
-SAM_F3                  equ $ffcc           ;  "        "     F3
-SAM_F4                  equ $ffce           ;  "        "     F4
-SAM_F5                  equ $ffd0           ;  "        "     F5
-SAM_F6                  equ $ffd2           ;  "        "     F6
+SAM_V0_CLEAR            equ $ffc0           ; SAM registers V0 through V2 sets the video display mode
+SAM_V0_SET              equ $ffc1           ;
+SAM_V1_CLEAR            equ $ffc2           ;
+SAM_V1_SET              equ $ffc3           ;
+SAM_V2_CLEAR            equ $ffc4           ;
+SAM_V2_SET              equ $ffc5           ;
+
+SAM_F0_CLEAR            equ $ffc6           ; SAM registers F0 through F6 sets the video display starting address
+SAM_F0_SET              equ $ffc7           ;
+SAM_F1_CLEAR            equ $ffc8           ;
+SAM_F1_SET              equ $ffc9           ;
+SAM_F2_CLEAR            equ $ffca           ;
+SAM_F2_SET              equ $ffcb           ;
+SAM_F3_CLEAR            equ $ffcc           ;
+SAM_F3_SET              equ $ffcd           ;
+SAM_F4_CLEAR            equ $ffce           ;
+SAM_F4_SET              equ $ffcf           ;
+SAM_F5_CLEAR            equ $ffd0           ;
+SAM_F5_SET              equ $ffd1           ;
+SAM_F6_CLEAR            equ $ffd2           ;
+SAM_F6_SET              equ $ffd3           ;
 
 
 NORMAL_SPEED_MODE       equ $ffd8           ; Any write selects 0.89 Mhz CPU clock
