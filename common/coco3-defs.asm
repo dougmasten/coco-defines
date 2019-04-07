@@ -602,7 +602,7 @@ NORMAL_SPEED_MODE       equ $ffd8           ; Any write selects 0.89 Mhz CPU clo
 HIGH_SPEED_MODE         equ $ffd9           ; Any write selects 1.79 Mhz CPU clock
 
 
-ROM_MODE_ENABLE         equ $ffde           ; Any write switches system ROMs into memory map
+ROM_MODE_ENABLE         equ $ffde           ; Any write selects RAM/ROM mode
 RAM_MODE_ENABLE         equ $ffdf           ; Any write selects all-RAM mode
 
 
