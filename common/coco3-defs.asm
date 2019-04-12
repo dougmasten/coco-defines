@@ -349,7 +349,7 @@ SSC_RW                  equ $ff7e           ; Sound/Speech Cartridge read/write
 ; Mini MPI (2-slots) by Ed Snider
 ; https://thezippsterzone.com/2018/05/07/mini-mpi/
 ;
-MPI_REG                 equ $ff7f           ; Multi-pak programming register
+MPI_REG                 equ $ff7f           ; Multi-pak programming register (Read and Write)
                                             ; Bit 7:4 - # of active CART and CTS slot   (ROM $C000-$DFFF)
                                             ; Bit 3:0 - # of active SCS slot            (I/O $FF40-$FF5F)
                                             ;
