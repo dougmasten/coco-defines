@@ -535,8 +535,8 @@ GIME_H_OFFSET           equ $ff9f           ; Horizontal offset register (Write-
                                             ; Bit 6:0 - 0-127 byte offset from vertical_offset_reg ($FF9E/$FF9D)
 
 
-GIME_MMU_0              equ $ffa0           ; MMU bank registers (task 0)
-GIME_MMU_1              equ $ffa8           ; MMU bank registers (task 1)
+GIME_MMU0              equ $ffa0            ; MMU bank registers (task 0)
+GIME_MMU1              equ $ffa8            ; MMU bank registers (task 1)
                                             ;
                                             ;  Task0  Task1   Logical Address   Blk #   RSDOS Memory Map
                                             ;  -----  -----   ---------------   -----   -----------------------------------
@@ -553,7 +553,22 @@ GIME_MMU_1              equ $ffa8           ; MMU bank registers (task 1)
                                             ;  $00-$3F - 512K
                                             ;  $00-$7F - 1024K
                                             ;  $00-$FF - 2048K
-
+GIME_MMU0_0000          equ GIME_MMU0
+GIME_MMU0_2000          equ GIME_MMU0+1
+GIME_MMU0_4000          equ GIME_MMU0+2
+GIME_MMU0_6000          equ GIME_MMU0+3
+GIME_MMU0_8000          equ GIME_MMU0+4
+GIME_MMU0_A000          equ GIME_MMU0+5
+GIME_MMU0_C000          equ GIME_MMU0+6
+GIME_MMU0_E000          equ GIME_MMU0+7
+GIME_MMU1_0000          equ GIME_MMU_1
+GIME_MMU1_2000          equ GIME_MMU1+1
+GIME_MMU1_4000          equ GIME_MMU1+2
+GIME_MMU1_6000          equ GIME_MMU1+3
+GIME_MMU1_8000          equ GIME_MMU1+4
+GIME_MMU1_A000          equ GIME_MMU1+5
+GIME_MMU1_C000          equ GIME_MMU1+6
+GIME_MMU1_E000          equ GIME_MMU1+7
 
 GIME_PALETTE            equ $ffb0           ; Color palette registers (16 bytes)
                                             ;
