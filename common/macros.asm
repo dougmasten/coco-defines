@@ -23,6 +23,70 @@ enable_interrupts   macro
                     andcc #$af
                     endm
 
+clear_carry_flag    macro
+                    andcc #^1
+                    endm
+
+set_carry_flag      macro
+                    orcc #1
+                    endm
+
+clear_overflow_flag macro
+                    andcc #^%00000010
+                    endm
+
+set_overflow_flag   macro
+                    orcc #%00000010
+                    endm
+
+clear_zero_flag     macro
+                    andcc #^%00000100
+                    endm
+
+set_zero_flag       macro
+                    orcc #%00000100
+                    endm
+
+clear_negative_flag macro
+                    andcc #^%00001000
+                    endm
+
+set_negative_flag   macro
+                    orcc #%00001000
+                    endm
+
+clear_irq_flag      macro
+                    andcc #^%00010000
+                    endm
+
+set_irq_flag        macro
+                    orcc #%00010000
+                    endm
+
+clear_half_carry_flag macro
+                    andcc #^%00100000
+                    endm
+
+set_half_carry_flag macro
+                    orcc #%00100000
+                    endm
+
+clear_firq_flag     macro
+                    andcc #^%01000000
+                    endm
+
+set_firq_flag       macro
+                    orcc #%01000000
+                    endm
+
+clear_stack_flag    macro
+                    andcc #^%10000000
+                    endm
+
+set_stack_flag      macro
+                    orcc #%10000000
+                    endm
+
 clru                macro
                     ldu #0
                     endm
