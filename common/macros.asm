@@ -98,6 +98,21 @@ low_nibble          macro
                     and\1 #%00001111
                     endm
 
+lsr4a               macro
+                    lsra
+                    lsra
+                    lsra
+                    lsra
+                    endm
+
+lsr4b               macro
+                    lsrb
+                    lsrb
+                    lsrb
+                    lsrb
+                    endm
+
+
 clru                macro
                     ldu #0
                     endm
