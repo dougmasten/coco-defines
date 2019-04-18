@@ -87,17 +87,6 @@ set_stack_flag      macro
                     orcc #%10000000
                     endm
 
-high_nibble         macro
-                    lsr\1
-                    lsr\1
-                    lsr\1
-                    lsr\1
-                    endm
-
-low_nibble          macro
-                    and\1 #%00001111
-                    endm
-
 lsr4a               macro
                     lsra
                     lsra
@@ -112,6 +101,19 @@ lsr4b               macro
                     lsrb
                     endm
 
+lsl4a               macro
+                    lsla
+                    lsla
+                    lsla
+                    lsla
+                    endm
+
+lsl4b               macro
+                    lslb
+                    lslb
+                    lslb
+                    lslb
+                    endm
 
 clru                macro
                     ldu #0
