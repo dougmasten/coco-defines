@@ -630,6 +630,7 @@ BOOMERANG_LED           equ $ffef           ; Programmable Tricolor LED to illum
                                             ;           11 = Set Blue intensity
                                             ; Bit 5   - n/a (Turbo identicator???)
                                             ; Bit 4:0 - Intensity (0-31)
+                                            ;
 BOOMERANG_MAGIC_1       equ $fdfd           ; Boomerang magic addresses to place device in "special mode"  (READ ONLY)
 BOOMERANG_MAGIC_2       equ $fd55           ;                                                              (READ ONLY)
 BOOMERANG_MAGIC_3       equ $fdaa           ; Read BOOMERANG_MAGIC_1-6 sequential, followed by             (READ ONLY)
