@@ -8,10 +8,6 @@
                         ifndef COCO3_DEFS   ; Load defines only once
 
 
-; Useful definations
-INTERRUPT_MASK          equ %01010000       ; Interrupt mask for IRQ and FIRQ
-
-
 ; RSDOS Variables
 RSDOS_DEVNUM            equ $6f             ; Device number: 0=screen, $FE=printer
 RSDOS_REBOOT_FLAG       equ $71             ; $55=warm boot, other=cold boot
