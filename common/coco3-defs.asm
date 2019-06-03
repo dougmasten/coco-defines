@@ -420,8 +420,8 @@ KEY_INTERRUPT           equ %00000010
 CART_INTERRUPT          equ %00000001
 
 GIME_TIMER              equ $ff94
-GIME_TIMER_MSB          equ $ff94           ; Timer bits 11:8 - write here to start timer (Write-only)
-GIME_TIMER_LSB          equ $ff95           ; Timer bits 7:0 (Write-only)
+GIME_TIMER_MSB          equ GIME_TIMER      ; Timer bits 11:8 - write here to start timer (Write-only)
+GIME_TIMER_LSB          equ GIME_TIMER+1    ; Timer bits 7:0 (Write-only)
                                             ; The 12-bit timer can be loaded with any number from 0-4095.
                                             ; Storing a zero to both registers stops the timer from operating.
                                             ;
