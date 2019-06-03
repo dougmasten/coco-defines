@@ -531,8 +531,8 @@ GIME_H_OFFSET           equ $ff9f           ; Horizontal offset register (Write-
                                             ; Bit 6:0 - 0-127 byte offset from vertical_offset_reg ($FF9E/$FF9D)
 
 
-GIME_MMU0              equ $ffa0            ; MMU bank registers (task 0)
-GIME_MMU1              equ $ffa8            ; MMU bank registers (task 1)
+GIME_MMU0               equ $ffa0           ; MMU bank registers (task 0)
+GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1)
                                             ;
                                             ;  Task0  Task1   Logical Address   Blk #   RSDOS Memory Map
                                             ;  -----  -----   ---------------   -----   -----------------------------------
