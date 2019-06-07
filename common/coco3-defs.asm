@@ -617,14 +617,14 @@ ROM_MODE_ENABLE         equ $ffde           ; Any write selects RAM/ROM mode
 RAM_MODE_ENABLE         equ $ffdf           ; Any write selects all-RAM mode
 
 
-; Boomerang's Guardian+ (CPU buffer and MMU board) by BoysonTech
+; Boomerang 2MB Memory board by BoysonTech
 ; https://boysontech.com/marketplace/
 BOOMERANG_LED           equ $ffef           ; Programmable Tricolor LED to illuminate inside of CoCo3 case
                                             ; Bit 7:6 - 00 = Set Red, Green and Blue intensity
                                             ;           01 = Set Red intensity
                                             ;           10 = Set Green intensity
                                             ;           11 = Set Blue intensity
-                                            ; Bit 5   - n/a (Turbo identicator???)
+                                            ; Bit 5   - n/a
                                             ; Bit 4:0 - Intensity (0-31)
                                             ;
 BOOMERANG_MAGIC_1       equ $fdfd           ; Boomerang magic addresses to place device in "special mode"  (READ ONLY)
