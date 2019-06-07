@@ -192,7 +192,7 @@ GMC_BANK                equ $ff40
 GMC_SOUND               equ $ff41           ; Texas Instruments SN76489 data bus (Write-only)
 
 
-; CoCo SDC
+; CoCo SDC by Darren Atkinson
 ; http://cocosdc.blogspot.com/
 SDC_REG_CTRL            equ $ff40           ; Controller Latch (Write)
 SDC_REG_DATA            equ $ff42           ; Flash Data Register
