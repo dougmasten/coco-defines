@@ -367,12 +367,12 @@ MPI_REG                 equ $ff7f           ; Multi-pak programming register (Re
 GIME_BASE               equ $ff90
 
 GIME_INIT0              equ $ff90           ; Initialization Register 0 (Write-only)
-                                            ; Bit 7 - 1 = CoCo 1/2 Video Mode compatible, 0=CoCo 3 Video Modes
+                                            ; Bit 7 - 1 = CoCo 1/2 Video Mode compatible, 0 = CoCo 3 Video Modes
                                             ; Bit 6 - 1 = MMU enabled, 0 = GIME maps block 38-3F by default
                                             ; Bit 5 - 1 = GIME chip IRQ enabled
                                             ; Bit 4 - 1 = GIME chip FIRQ enabled
                                             ; Bit 3 - 1 = Vector RAM at $FExx enabled
-                                            ; Bit 2 - 1 = Standard SCS
+                                            ; Bit 2 - 1 = Standard SCS (Spare chip select)
                                             ; Bit 1 - ROM map control       0X = 16K internal, 16K external
                                             ; Bit 0 -  "   "                10 = 32K internal
                                             ;                               11 = 32K external (except interrupt vectors)
@@ -393,8 +393,8 @@ GIME_INIT1              equ $ff91           ; Initialization Register 1 (Write-o
                                             ; Bit 6   - Memory type: 0 = 64K chips, 1 = 256K chips
                                             ; Bit 5   - Timer Input clock select: 0 = 63.695 usec, 1 = 279.365 nsec
                                             ; Bit 4:1 - n/a
-                                            ; Bit 0   - MMU Task register select: 0 = enable $FFA0-$FFA7
-                                            ;                                     1 = enable $FFA8-$FFAF
+                                            ; Bit 0   - MMU Task register select: 0 = enable $FFA0-$FFA7 MMU registers
+                                            ;                                     1 = enable $FFA8-$FFAF MMU registers
 
 GIME_IRQ                equ $ff92           ; Interrupt Request Enable Register (Read and write)
                                             ; Bit 7:6 - n/a
@@ -434,7 +434,6 @@ GIME_TIMER_LSB          equ GIME_TIMER+1    ; Timer bits 7:0 (Write-only)
                                             ; All other values stored are affected the same way:
                                             ;   1986 GIME: nnn+2
                                             ;   1987 GIME: nnn+1
-
 
 GIME_VIDEO_MODE         equ $ff98           ; Video mode register - VMODE (Write-only)
                                             ; Bit 7   - 0 = Text modes, 1 = Graphics modes
@@ -532,7 +531,6 @@ GIME_H_OFFSET           equ $ff9f           ; Horizontal offset register (Write-
                                             ; Bit 7   - 1 = Horizontal virtual screen enable (256 bytes per row)
                                             ;           0 = Normal horizontal display
                                             ; Bit 6:0 - 0-127 byte offset from vertical_offset_reg ($FF9E/$FF9D)
-
 
 GIME_MMU0               equ $ffa0           ; MMU bank registers (task 0)
 GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1)
