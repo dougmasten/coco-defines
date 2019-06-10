@@ -459,7 +459,7 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ;              11 = 225 lines
                                             ;
                                             ; Bit 4:2 - Horizontal resolution HRES
-                                            ;            Graphics:
+                                            ;             Graphics:
                                             ;               000 = 16 bytes per row
                                             ;               001 = 20 bytes per row
                                             ;               010 = 32 bytes per row
@@ -469,17 +469,22 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ;               110 = 128 bytes per row
                                             ;               111 = 160 bytes per row
                                             ;
-                                            ;            Text:
+                                            ;             Text:
                                             ;               0x0 = 32 characters per row
                                             ;               0x1 = 40 characters per row
                                             ;               1x0 = 64 characters per row
                                             ;               1x1 = 80 characters per row
                                             ;
                                             ; Bit 1:0 - Color resolution bits CRES
-                                            ;             00 = 2 colors (8 pixels per byte)
-                                            ;             01 = 4 colors (4 pixels per byte)
-                                            ;             10 = 16 colors (2 pixels per byte)
-                                            ;             11 = Undefined
+                                            ;             Graphics:
+                                            ;               00 = 2 colors (8 pixels per byte)
+                                            ;               01 = 4 colors (4 pixels per byte)
+                                            ;               10 = 16 colors (2 pixels per byte)
+                                            ;               11 = Undefined
+                                            ;
+                                            ;             Text:
+                                            ;               x0 = No color attributes
+                                            ;               x1 = Color attributes enabled
                                             ;
                                             ; Graphics modes:
                                             ;         HRES   CRES   Commonly used graphics mode
