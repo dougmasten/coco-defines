@@ -627,14 +627,21 @@ BOOMERANG_LED           equ $ffef           ; Programmable Tricolor LED to illum
                                             ; Bit 5   - n/a
                                             ; Bit 4:0 - Intensity (0-31)
                                             ;
+                                            ; The LED can also operate in "speed" mode, where the red LED will signify
+                                            ; the CoCo running in "slow" mode and the green LED denotes "fast" mode. To
+                                            ; activate, see "special mode" below.
+                                            ;
 BOOMERANG_MAGIC_1       equ $fdfd           ; Boomerang magic addresses to place device in "special mode"  (READ ONLY)
 BOOMERANG_MAGIC_2       equ $fd55           ;                                                              (READ ONLY)
 BOOMERANG_MAGIC_3       equ $fdaa           ; Read BOOMERANG_MAGIC_1-6 sequential, followed by             (READ ONLY)
-BOOMERANG_MAGIC_4       equ $fdff           ; either BOOMERANG_512K or BOOMERANG_TURBO_512K                (READ ONLY)
-BOOMERANG_MAGIC_5       equ $fd00           ;                                                              (READ ONLY)
+BOOMERANG_MAGIC_4       equ $fdff           ; either BOOMERANG_512K, BOOMERANG_512K_TURBO,                 (READ ONLY)
+BOOMERANG_MAGIC_5       equ $fd00           ; BOOMERANG_2M or BOOMERANG_2M_TUBRO.                          (READ ONLY)
 BOOMERANG_MAGIC_6       equ $fdff           ;                                                              (READ ONLY)
-BOOMERANG_512K          equ $fd01           ; Disable 2M and activate only 512K mode                       (READ ONLY)
-BOOMERANG_TURBO_512K    equ $fd81           ; Turbo and 512K mode                                          (READ ONLY)
+BOOMERANG_512K          equ $fd01           ; Enable 512K mode                                             (READ ONLY)
+BOOMERANG_512K_TURBO    equ $fd81           ; Enable 512K and turbo LED mode                               (READ ONLY)
+BOOMERANG_2M            equ $fd00           ; Enable 2M mode                                               (READ ONLY)
+BOOMERANG_2M_TURBO      equ $fd80           ; Enable 2M and turbo LED mode                                 (READ ONLY)
+
 
 
 ; Interrupt Vectors
