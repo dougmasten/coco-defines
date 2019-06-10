@@ -331,10 +331,13 @@ FLASH_COMMAND_REG       equ $ff80           ; Remap CoCoFlash registers
                                             ;                                           (setting high bit will hide device)
 
 
+; Orchestra-90 Cartridge
 ORCH90                  equ $ff7a           ; Orchestra-90 Cartridge
 ORCH90_LEFT             equ ORCH90          ; Orchestra-90 (Left channel)
 ORCH90_RIGHT            equ ORCH90+1        ; Orchestra-90 (Right channel)
 
+
+; Sound/Speech Cartridge
 SSC_RESET               equ $ff7d           ; Sound/Speech Cartridge reset
 SSC_RW                  equ $ff7e           ; Sound/Speech Cartridge read/write
 
