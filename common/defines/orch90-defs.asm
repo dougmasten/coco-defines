@@ -2,7 +2,7 @@
 
                         *pragmapush list    ; Save state of list pragma
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
-                        ifndef ORCH90_DEFS   ; Load defines only once
+                        ifndef ORCH90_DEFS  ; Load defines only once
 
 
 ORCH90                  equ $ff7a           ; Orchestra-90 Cartridge

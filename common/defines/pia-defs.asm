@@ -2,7 +2,7 @@
 
                         *pragmapush list    ; Save state of list pragma
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
-                        ifndef PIA_DEFS   ; Load defines only once
+                        ifndef PIA_DEFS     ; Load defines only once
 
 
 ; PIA Registers

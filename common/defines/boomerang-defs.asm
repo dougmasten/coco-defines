@@ -71,6 +71,6 @@ enable_boomerang_2m_turbo  macro
                         sta BOOMERANG_2M_TURBO
                         endm
 
-BOOMERANG_DEFS          equ 1
+BOOMERANG_DEFS          equ 1               ; Set flag for defines being loaded
                         endc
                         *pragmapop list     ; restore assembly listing to previous state
