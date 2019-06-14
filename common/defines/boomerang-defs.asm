@@ -21,21 +21,24 @@ BOOMERANG_LED           equ $ffef           ; Programmable Tricolor LED on Guard
 ; the CoCo running in "slow" mode and the green LED denotes "fast" mode. To
 ; activate, see "special mode" below.
 
+; To activate "special mode", read BOOMERANG_MAGIC_1 thur BOOMERANG_MAGIC_6, followed by
+; either BOOMERANG_512K, BOOMERANG_512K_TURBO, BOOMERANG_2M or BOOMERANG_2M_TUBRO.
+
 
 ; Boomerang magic addresses to place device in "special mode"
-BOOMERANG_MAGIC_1       equ $fdfd           ; Read BOOMERANG_MAGIC_1-6 sequential, followed by             (READ ONLY)
-BOOMERANG_MAGIC_2       equ $fd55           ; either BOOMERANG_512K, BOOMERANG_512K_TURBO,                 (READ ONLY)
-BOOMERANG_MAGIC_3       equ $fdaa           ; BOOMERANG_2M or BOOMERANG_2M_TUBRO.                          (READ ONLY)
-BOOMERANG_MAGIC_4       equ $fdff           ;                                                              (READ ONLY)
-BOOMERANG_MAGIC_5       equ $fd00           ;                                                              (READ ONLY)
-BOOMERANG_MAGIC_6       equ $fdff           ;                                                              (READ ONLY)
+BOOMERANG_MAGIC_1       equ $fdfd           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_2       equ $fd55           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_3       equ $fdaa           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_4       equ $fdff           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_5       equ $fd00           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_6       equ $fdff           ;                                  (READ ONLY)
 
 
 ; Boomerang "special modes" options
-BOOMERANG_512K          equ $fd01           ; Enable 512K mode                                             (READ ONLY)
-BOOMERANG_512K_TURBO    equ $fd81           ; Enable 512K and turbo LED mode                               (READ ONLY)
-BOOMERANG_2M            equ $fd00           ; Enable 2M mode                                               (READ ONLY)
-BOOMERANG_2M_TURBO      equ $fd80           ; Enable 2M and turbo LED mode                                 (READ ONLY)
+BOOMERANG_512K          equ $fd01           ; Enable 512K mode                 (READ ONLY)
+BOOMERANG_512K_TURBO    equ $fd81           ; Enable 512K and turbo LED mode   (READ ONLY)
+BOOMERANG_2M            equ $fd00           ; Enable 2M mode                   (READ ONLY)
+BOOMERANG_2M_TURBO      equ $fd80           ; Enable 2M and turbo LED mode     (READ ONLY)
 
 
 enable_boomerang_magic  macro
