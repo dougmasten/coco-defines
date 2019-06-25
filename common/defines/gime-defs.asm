@@ -245,5 +245,4 @@ GIME_PALETTE            equ $ffb0           ; Color palette registers (16 bytes)
 
 GIME_DEFS               equ 1               ; Set flag for defines being loaded
                         endc
-
                         *pragmapop list     ; restore assembly listing to previous state

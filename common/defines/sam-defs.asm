@@ -58,4 +58,3 @@ SAM_F6_SET              equ SAM_F_BASE+13
 SAM_DEFS                equ 1               ; Set flag for defines being loaded
                         endc
                         *pragmapop list     ; restore assembly listing to previous state
-
