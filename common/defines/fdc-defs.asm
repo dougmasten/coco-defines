@@ -21,6 +21,17 @@ FDC_SECTOR              equ $ff4a            ; Floppy disk controller sector reg
 FDC_DATA                equ $ff4b            ; Floppy disk controller data register
 
 
+; FDC control register bits at $ff40 (FDC_CTRL)
+FDC_CR_HALT            equ %10000000
+FDC_CR_DRIVE3          equ %01000000
+FDC_CR_DENSITY         equ %00100000
+FDC_CR_WRITE           equ %00010000
+FDC_CR_MOTOR           equ %00001000
+FDC_CR_DRIVE2          equ %00000100
+FDC_CR_DRIVE1          equ %00000010
+FDC_CR_DRIVE0          equ %00000001
+
+
 turn_fdc_motor_off      macro                ; turn off all drive motors
                         clr FDC_CTRL
                         endm
