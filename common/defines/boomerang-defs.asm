@@ -2,7 +2,6 @@
 
                         *pragmapush list    ; Save state of list pragma
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
-
                         ifndef BOOMERANG_DEFS  ; Load defines only once
 
 
@@ -42,37 +41,38 @@ BOOMERANG_2M_TURBO      equ $fd80           ; Enable 2M and turbo LED mode     (
 
 
 enable_boomerang_magic  macro
-                        sta BOOMERANG_MAGIC_1
-                        sta BOOMERANG_MAGIC_2
-                        sta BOOMERANG_MAGIC_3
-                        sta BOOMERANG_MAGIC_4
-                        sta BOOMERANG_MAGIC_5
-                        sta BOOMERANG_MAGIC_6
+                        lda BOOMERANG_MAGIC_1
+                        lda BOOMERANG_MAGIC_2
+                        lda BOOMERANG_MAGIC_3
+                        lda BOOMERANG_MAGIC_4
+                        lda BOOMERANG_MAGIC_5
+                        lda BOOMERANG_MAGIC_6
                         endm
 
 
 enable_boomerang_512k   macro
                         enable_boomerang_magic
-                        sta BOOMERANG_512K
+                        lda BOOMERANG_512K
                         endm
 
 
 enable_boomerang_2m     macro
                         enable_boomerang_magic
-                        sta BOOMERANG_2M
+                        lda BOOMERANG_2M
                         endm
 
 
 enable_boomerang_512k_turbo  macro
                         enable_boomerang_magic
-                        sta BOOMERANG_512K_TURBO
+                        lda BOOMERANG_512K_TURBO
                         endm
 
 
 enable_boomerang_2m_turbo  macro
                         enable_boomerang_magic
-                        sta BOOMERANG_2M_TURBO
+                        lda BOOMERANG_2M_TURBO
                         endm
+
 
 BOOMERANG_DEFS          equ 1               ; Set flag for defines being loaded
                         endc
