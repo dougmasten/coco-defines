@@ -7,6 +7,7 @@
 
 ; YMF262 (OPL3) Sound Chip
 ; Used in Mega-Mini and CoCoSDC Extender
+; https://thezippsterzone.com/2018/12/01/programming-the-opl3-chip-with-the-color-computer/
 OPL3_BASE               equ $ff50
 OPL3_PORT0_REG          equ OPL3_BASE       ; Write only - Port #0 Register number
 OPL3_STATUS             equ OPL3_BASE       ; Read only  - Timer interrupt status
