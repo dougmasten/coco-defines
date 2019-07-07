@@ -5,6 +5,8 @@
                         ifndef MAME_DEFS    ; Load defines only once
 
 
+; Erik Milliluk's development fork of MAME with developers enhancements
+; https://github.com/milliluk/mame
 MAME_DEBUG_CTRL         equ $ff04           ; MAME Debug Control (Milliluk's branch only)
                                             ; Bit 7:2 - n/a
                                             ; Bit 1 - Set to '1' snapshots Video Frame count to mame_framecount
