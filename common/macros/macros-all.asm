@@ -1,7 +1,7 @@
-; macros.asm
+; macros-all.asm
                     *pragmapush list        ; Save state of list pragma
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
-                    ifndef MACROS_DEFS      ; Load macros only once
+                    ifndef MACROS_ALL_LOADED    ; Load macros only once
 
 
                     include boomerang.asm
@@ -14,7 +14,7 @@
                     include wait-cycles.asm
 
 
-MACROS_DEFS         equ 1                   ; Set flag for macros being loaded
+MACROS_ALL_LOADED   equ 1                   ; Set flag for macros being loaded
                     endc
 
                     *pragmapop list         ; restore assembly listing to previous state
