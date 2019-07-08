@@ -32,11 +32,6 @@ FDC_CR_DRIVE1          equ %00000010
 FDC_CR_DRIVE0          equ %00000001
 
 
-turn_fdc_motor_off      macro                ; turn off all drive motors
-                        clr FDC_CTRL
-                        endm
-
-
 FDC_DEFS                equ 1               ; Set flag for defines being loaded
                         endc
                         *pragmapop list     ; restore assembly listing to previous state
