@@ -5,32 +5,46 @@
                     ifndef SHIFT_MACROS     ; Load macros only once
 
 
+                    ifndef repeat4
+repeat4             macro
+                    \1
+                    \1
+                    \1
+                    \1
+                    endm
+                    endc
+
+
+asl4a               macro
+                    repeat4 asla
+                    endm
+
+asl4b               macro
+                    repeat4 aslb
+                    endm
+
+asr4a               macro
+                    repeat4 asra
+                    endm
+
+asr4b               macro
+                    repeat4 asrb
+                    endm
+
 lsr4a               macro
-                    lsra
-                    lsra
-                    lsra
-                    lsra
+                    repeat4 lsra
                     endm
 
 lsr4b               macro
-                    lsrb
-                    lsrb
-                    lsrb
-                    lsrb
+                    repeat4 lsrb
                     endm
 
 lsl4a               macro
-                    lsla
-                    lsla
-                    lsla
-                    lsla
+                    repeat4 lsla
                     endm
 
 lsl4b               macro
-                    lslb
-                    lslb
-                    lslb
-                    lslb
+                    repeat4 lslb
                     endm
 
 
