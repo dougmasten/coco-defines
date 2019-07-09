@@ -11,7 +11,6 @@
                     include shifts.asm
                     include space-saving.asm
                     include test-instructions.asm
-                    include wait-cycles.asm
 
 
 MACROS_ALL_LOADED   equ 1                   ; Set flag for macros being loaded

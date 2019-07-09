@@ -4,6 +4,10 @@
                         pragma nolist           ; Turn off assembly listing and exclude from symbol list
                         ifndef WAIT_CYCLES_MACROS  ; Load defines only once
 
+; Prehaps some of these could be usefully especially the smaller ones. But this quickly become
+; a exercise of going down another rabbit hole once I started with no real purpose. But I'm
+; leaving it here for your amusement...
+
 
 ; wait 1 clock cycle
 wait1                   macro
@@ -34,12 +38,7 @@ wait3                   macro
 
 ; wait 4 clock cycles
 wait4                   macro
-                        ifpragma 6809
-                          nop
-                          nop
-                        else
-                          tfr 0,0
-                        endc
+                        leas ,s
                         endm
 
 
