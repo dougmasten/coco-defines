@@ -7,6 +7,7 @@
                     include boomerang.asm
                     include clear-instructions.asm
                     include fdc.asm
+                    include hardware.asm
                     include register-cc.asm
                     include shifts.asm
                     include space-saving.asm
