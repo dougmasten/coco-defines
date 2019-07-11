@@ -4,7 +4,6 @@
                     ifndef MACROS_SPACE_DEFS   ; Load macros only once
 
 
-
 ; space savings macros
 skip_one_byte       macro
                     fcb $c5                 ; actually a BITB #$xx instruction (2 clocks)
@@ -13,8 +12,6 @@ skip_one_byte       macro
 skip_two_bytes      macro
                     fcb $8c                 ; actually a CMPX #$xxxx instruction (3 clocks)
                     endm
-
-
 
 
 MACROS_SPACE_DEFS   equ 1                   ; Set flag for macros being loaded
