@@ -10,12 +10,12 @@ copy_one_line   macro
                 endm
 
 
+; test #1
                 repeat copy_one_line,10
 
+; test #2
 num_of_lines    equ 10
                 repeat copy_one_line,num_of_lines
 
-                repeat abx,10
+; test #3
                 repeat lsra,4
-                repeat lslb,4
-
