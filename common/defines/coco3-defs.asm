@@ -7,11 +7,14 @@
                         ifndef COCO3_DEFS   ; Load defines only once
 
 
-                        include rsdos-defs.asm
-                        include pia-defs.asm
+                        include extra-defs.asm
+                        include fdc-defs.asm
                         include gime-defs.asm
                         include interrupts-defs.asm
-                        include extra-defs.asm
+                        include mpi-defs.asm
+                        include pia-defs.asm
+                        include regcc-defs.asm
+                        include rsdos-defs.asm
 
 
 COCO3_DEFS              equ 1               ; Set flag for defines being loaded

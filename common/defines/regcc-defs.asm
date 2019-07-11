@@ -1,8 +1,8 @@
-; m6809-defs.asm
+; regcc-defs.asm
 
-                    *pragmapush list    ; Save state of list pragma
-                    pragma nolist       ; Turn off assembly listing and exclude from symbol list
-                    ifndef M6809_DEFS   ; Load defines only once
+                    *pragmapush list        ; Save state of list pragma
+                    pragma nolist           ; Turn off assembly listing and exclude from symbol list
+                    ifndef REGCC_DEFS       ; Load defines only once
 
 
 ; convenient definitions
@@ -16,6 +16,6 @@ CC_OVERFLOW         equ %00000010           ; overflow
 CC_CARRY            equ %00000001           ; carry (or borrow)
 
 
-M6809_DEFS          equ 1               ; Set flag for defines being loaded
+REGCC_DEFS          equ 1                   ; Set flag for defines being loaded
                     endc
-                    *pragmapop list     ; restore assembly listing to previous state
+                    *pragmapop list         ; restore assembly listing to previous state
