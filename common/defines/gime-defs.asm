@@ -241,6 +241,22 @@ GIME_PALETTE            equ $ffb0           ; Color palette registers (16 bytes)
                                             ;
                                             ; Reading and writing palette registers causes a small 'glitch' on screen.
                                             ; To avoid, change palette registers in VSYNC or HSYNC.
+GIME_PALETTE0           equ GIME_PALETTE
+GIME_PALETTE1           equ GIME_PALETTE+1
+GIME_PALETTE2           equ GIME_PALETTE+2
+GIME_PALETTE3           equ GIME_PALETTE+3
+GIME_PALETTE4           equ GIME_PALETTE+4
+GIME_PALETTE5           equ GIME_PALETTE+5
+GIME_PALETTE6           equ GIME_PALETTE+6
+GIME_PALETTE7           equ GIME_PALETTE+7
+GIME_PALETTE8           equ GIME_PALETTE+8
+GIME_PALETTE9           equ GIME_PALETTE+9
+GIME_PALETTE10          equ GIME_PALETTE+10
+GIME_PALETTE11          equ GIME_PALETTE+11
+GIME_PALETTE12          equ GIME_PALETTE+12
+GIME_PALETTE13          equ GIME_PALETTE+13
+GIME_PALETTE14          equ GIME_PALETTE+14
+GIME_PALETTE15          equ GIME_PALETTE+15
 
 
 GIME_DEFS               equ 1               ; Set flag for defines being loaded
