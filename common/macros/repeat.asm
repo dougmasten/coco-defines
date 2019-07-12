@@ -7,35 +7,136 @@
 ;------------------------------------------------------------------------------
 ; Repeat a macro X number of times
 ;
-; example:
+; examples:
 ;
-;    include repeat.asm                    ; include this macro file
+;   copy_one_line macro                    ; an example of a macro to repeat
+;                 lda ,u
+;                 sta ,x
+;                 abx
+;                 endm
 ;
-;    copy_one_line macro                   ; an example of a macro to repeat
-;                  lda ,u
-;                  sta ,x
-;                  abx
-;                  endm
+;   repeat copy_one_line,100               ; repeat macro 100 times
 ;
-;    repeat copy_one_line,100              ; repeat macro 100 times
+;   num_of_lines  equ 100                  ;
+;   repeat copy_one_line,num_of_lines      ; repeat macro for number value of a variable
 ;
-;    num_of_lines  equ 100                 ;
-;    repeat copy_one_line,num_of_lines     ; repeat macro for number value of a variable
-;
-;    repeat lsra,4                         ; repeat instruction "lsra" four times
+;   repeat lsra,4                          ; repeat instruction "lsra" four times
 ;------------------------------------------------------------------------------
 
 repeat                 macro
                        *pragmapush list    ; Save state of list pragma
                        pragma nolist       ; Turn off assembly listing and exclude from symbol list
-                       ifne \2             ; test for zero repeat case
-repeatc                  set \2-1
-                         \1
-                         ifgt repeatc
-                           repeat \1,repeatc
+repeatc                set \2
+                       ifne repeatc        ; test for zero repeat case
+
+repeat32_count           set repeatc/32
+                         ifne repeat32_count
+                           repeat32 \1,repeat32_count
                          endc
+repeatc                  set repeatc-(repeat32_count*32)
+
+repeat16_count           set repeatc/16
+                         ifne repeat16_count
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                         endc
+repeatc                  set repeatc-(repeat16_count*16)
+
+repeat8_count            set repeatc/8
+                         ifne repeat8_count
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                           \1
+                         endc
+repeatc                  set repeatc-(repeat8_count*8)
+
+repeat4_count            set repeatc/4
+                         ifne repeat4_count
+                           \1
+                           \1
+                           \1
+                           \1
+                         endc
+repeatc                  set repeatc-(repeat4_count*4)
+
+repeat2_count            set repeatc/2
+                         ifne repeat2_count
+                           \1
+                           \1
+                         endc
+repeatc                  set repeatc-(repeat2_count*2)
+
+repeat1_count            set repeatc/1
+                         ifne repeat1_count
+                           \1
+                         endc
+repeatc                  set repeatc-repeat1_count
+
+                         ifne repeatc
+                           error Something went wrong in repeat macro - ending repeat count is not zero
+                         endc
+
                        endc
                        *pragmapop list     ; restore assembly listing to previous state
+                       endm
+
+
+repeat32               macro
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+                       \1
+repeat32_count         set \2-1
+                       ifgt repeat32_count
+                         repeat32 \1,repeat32_count
+                       endc
                        endm
 
 
