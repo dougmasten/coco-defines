@@ -30,12 +30,22 @@ repeatc                set \2
                        ifne repeatc        ; test for zero repeat case
 
 repeat32_count           set repeatc/32
+repeatc                  set repeatc-(repeat32_count*32)
+repeat16_count           set repeatc/16
+repeatc                  set repeatc-(repeat16_count*16)
+repeat8_count            set repeatc/8
+repeatc                  set repeatc-(repeat8_count*8)
+repeat4_count            set repeatc/4
+repeatc                  set repeatc-(repeat4_count*4)
+repeat2_count            set repeatc/2
+repeatc                  set repeatc-(repeat2_count*2)
+repeat1_count            set repeatc/1
+repeatc                  set repeatc-repeat1_count
+
                          ifne repeat32_count
                            repeat32 \1,repeat32_count
                          endc
-repeatc                  set repeatc-(repeat32_count*32)
 
-repeat16_count           set repeatc/16
                          ifne repeat16_count
                            \1
                            \1
@@ -54,9 +64,7 @@ repeat16_count           set repeatc/16
                            \1
                            \1
                          endc
-repeatc                  set repeatc-(repeat16_count*16)
 
-repeat8_count            set repeatc/8
                          ifne repeat8_count
                            \1
                            \1
@@ -67,32 +75,21 @@ repeat8_count            set repeatc/8
                            \1
                            \1
                          endc
-repeatc                  set repeatc-(repeat8_count*8)
 
-repeat4_count            set repeatc/4
                          ifne repeat4_count
                            \1
                            \1
                            \1
                            \1
                          endc
-repeatc                  set repeatc-(repeat4_count*4)
 
-repeat2_count            set repeatc/2
                          ifne repeat2_count
                            \1
                            \1
                          endc
-repeatc                  set repeatc-(repeat2_count*2)
 
-repeat1_count            set repeatc/1
                          ifne repeat1_count
                            \1
-                         endc
-repeatc                  set repeatc-repeat1_count
-
-                         ifne repeatc
-                           error Something went wrong in repeat macro - ending repeat count is not zero
                          endc
 
                        endc
