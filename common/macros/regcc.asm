@@ -5,8 +5,8 @@
 
 
 ; make sure defines are included
-                    ifndef M6809_DEFS
-                    include ../defines/m6809-defs.asm
+                    ifndef REGCC_DEFS
+                    include ../defines/regcc-defs.asm
                     endc
 
 
