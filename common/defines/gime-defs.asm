@@ -188,8 +188,8 @@ GIME_H_OFFSET           equ $ff9f           ; Horizontal offset register (Write-
                                             ;           0 = Normal horizontal display
                                             ; Bit 6:0 - 0-127 byte offset from vertical_offset_reg ($FF9E/$FF9D)
 
-GIME_MMU0               equ $ffa0           ; MMU bank registers (task 0)
-GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1)
+GIME_MMU0               equ $ffa0           ; MMU bank registers (task 0) (Write-only*)
+GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1) (Write-only*)
                                             ;
                                             ;  Task0  Task1   Logical Address   Blk #   RSDOS Memory Map
                                             ;  -----  -----   ---------------   -----   -----------------------------------
@@ -206,6 +206,12 @@ GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1)
                                             ;  $00-$3F - 512K
                                             ;  $00-$7F - 1024K
                                             ;  $00-$FF - 2048K
+                                            ;
+                                            ;  * Depending on GIME version and memory board, the MMU registers might be
+                                            ;    readable. But due to various hardware issues (timing issue w/ palette
+                                            ;    register causing sparkles on screen and upper 2-bits of register not
+                                            ;    always available depending on memory board) the best practice is to
+                                            ;    write only.
 GIME_MMU0_0000          equ GIME_MMU0
 GIME_MMU0_2000          equ GIME_MMU0+1
 GIME_MMU0_4000          equ GIME_MMU0+2
