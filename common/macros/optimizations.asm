@@ -14,6 +14,15 @@ skip_two_bytes      macro
                     endm
 
 
+; increment memory word by +1
+incword             macro
+                    inc \1+1                ; increment LSB
+                    bne a@
+                    inc \1                  ; increment MSB
+a@                  equ *
+                    endm
+
+
 MACROS_OPTIMIZE_DEFS   equ 1                   ; Set flag for macros being loaded
                     endc
 
