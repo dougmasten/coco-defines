@@ -1,7 +1,7 @@
 ; regcc.asm
                     *pragmapush list        ; Save state of list pragma
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
-                    ifndef REGCC_MACROS  ; Load macros only once
+                    ifndef REGCC_MACROS     ; Load macros only once
 
 
 ; make sure defines are included
