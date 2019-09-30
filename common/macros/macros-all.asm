@@ -10,8 +10,9 @@
                     include hardware.asm
                     include register-cc.asm
                     include shifts.asm
-                    include space-saving.asm
+                    include optimizations.asm
                     include test-instructions.asm
+                    include comments.asm
 
 
 MACROS_ALL_LOADED   equ 1                   ; Set flag for macros being loaded
