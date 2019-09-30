@@ -8,7 +8,7 @@
                     include clear-instructions.asm
                     include fdc.asm
                     include hardware.asm
-                    include register-cc.asm
+                    include regcc.asm
                     include shifts.asm
                     include optimizations.asm
                     include test-instructions.asm
