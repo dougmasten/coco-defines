@@ -5,7 +5,7 @@
 
 
 comment             macro
-                    ifeq 1
+                    if 0
                     endm
 
 end_comment         macro
