@@ -14,15 +14,15 @@ tstu                    macro
                         endm
 
 tstx                    macro
-                        cmpx #0
+                        ifpragma 6809
+                          leax ,x
+                        else
+                          cmpx #0
+                        endc
                         endm
 
 tsty                    macro
-                        ifpragma 6809
-                          cmpy #0
-                        else
-                          cmpr y,0
-                        endc
+                        leay ,y
                         endm
 
                         ifpragma no6309conv
