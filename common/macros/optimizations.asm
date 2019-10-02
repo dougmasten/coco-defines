@@ -23,6 +23,55 @@ a@                  equ *
                     endm
 
 
+; faster long branch instructions if branch is not taken (same cycles otherwise but with one extra byte)
+long_bcc            macro
+                    bcs a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bcs            macro
+                    bcc a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_beq            macro
+                    bne a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bmi            macro
+                    bpl a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bne            macro
+                    beq a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bpl            macro
+                    bmi a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bvc            macro
+                    bvs a@
+                    jmp \1
+a@                  equ *
+                    endm
+
+long_bvs            macro
+                    bvc a@
+                    jmp \1
+a@                  equ *
+                    endm
+
 MACROS_OPTIMIZE_DEFS equ 1                  ; Set flag for macros being loaded
                     endc
 
