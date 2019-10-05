@@ -74,6 +74,12 @@ a@                  equ *
 
 
 ; faster push and pop of a single register using SMC (Self modifying code)
+; example:
+;   firq
+;     store_a firq_reg_a
+;     ; misc code
+;     load_a firq_reg_a
+;     rti
 store_a             macro
                     sta \1
                     endm
