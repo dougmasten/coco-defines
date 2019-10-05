@@ -119,6 +119,15 @@ load_f              macro
 \1                  equ *-1
                     endm
 
+store_q             macro
+                    stq \1
+                    endm
+
+load_q              macro
+                    ldq #$ffffffff
+\1                  equ *-4
+                    endm
+
 store_u             macro
                     stu \1
                     endm
