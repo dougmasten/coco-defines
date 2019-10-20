@@ -10,6 +10,7 @@
                     include hardware.asm
                     include regcc.asm
                     include shifts.asm
+                    include convenience.asm
                     include optimizations.asm
                     include test-instructions.asm
                     include comments.asm
