@@ -41,8 +41,8 @@ SDC_DRIVE0              equ 0               ; Select Drive #0 (Default)
 SDC_DRIVE1              equ %00000001       ; Select Drive #1
 SDC_LSN_DOUBLE          equ 0               ; Select drive image is a double-sided floppy (Default)
 SDC_LSN_SINGLE          equ %00000010       ; Select drive image is a single-sided floppy
-SDC_M6809               equ 0               ; Select double-byte registers for Motorola 6809 CPU (Default)
-SDC_H6309               equ %00000100       ; Select single-byte register for Hitachi 6309's TFM instruction
+SDC_M6809               equ 0               ; Select double data register for Motorola 6809 CPU (Default)
+SDC_H6309               equ %00000100       ; Select single data register for Hitachi 6309's TFM instruction
 
 ; SDC commands that utilizes Hitachi 6309's TFM instruction
 SDC_CMD_READ_H6309      equ SDC_CMD_READ+SDC_H6309
