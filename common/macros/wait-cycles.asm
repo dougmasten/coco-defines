@@ -276,9 +276,9 @@ wait24                  macro
 ; wait 25 clock cycles
 wait25                  macro
                         ifpragma 6809
-                          pshs x,y,u
-                          puls x,y,u
-                          bra *+2
+                          pshs a,b
+                          mul
+                          puls a,b
                         else
                           pshs a,b,x,y,u
                           nop
@@ -302,9 +302,9 @@ wait26                  macro
 ; wait 27 clock cycles
 wait27                  macro
                         ifpragma 6809
-                          pshs a,b,dp,x,y
-                          puls a,b,dp,x,y
-                          bra *+2
+                          pshs cc,a,b
+                          mul
+                          puls cc,a,b
                         else
                           pshs a,b,dp,x,y,u
                           puls a,b,dp,x,y,u
