@@ -207,11 +207,10 @@ GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1) (Write
                                             ;  $00-$7F - 1024K
                                             ;  $00-$FF - 2048K
                                             ;
-                                            ;  * Depending on GIME version and memory board, the MMU registers might be
-                                            ;    readable. But due to various hardware issues (timing issue w/ palette
-                                            ;    register causing sparkles on screen and upper 2-bits of register not
-                                            ;    always available depending on memory board) the best practice is to
-                                            ;    write only.
+                                            ;  * The MMU registers can be read but depending on the memory board the
+                                            ;    upper 2 bits must be masked out. This could be a issue with memory
+                                            ;    boards that are greater than 512K. The best practice is to write
+                                            ;    only.
 GIME_MMU0_0000          equ GIME_MMU0
 GIME_MMU0_2000          equ GIME_MMU0+1
 GIME_MMU0_4000          equ GIME_MMU0+2
