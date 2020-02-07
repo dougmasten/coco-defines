@@ -21,6 +21,31 @@ RSDOS_RJOY_LR           equ $15a            ; Right joystick, left/right value
 RSDOS_RJOY_UD           equ $15b            ; Right joystick, up/down value
 RSDOS_LJOY_LR           equ $15c            ; Left joystick, left/right value
 RSDOS_LJOY_UD           equ $15d            ; Left joystick, up/down value
+RSDOS_RVEC0             equ $15e            ; BASIC's RAM Vector - Open Command
+RSDOS_RVEC1             equ $161            ; BASIC's RAM Vector - Device # Validity Check
+RSDOS_RVEC2             equ $164            ; BASIC's RAM Vector - Set print parameters
+RSDOS_RVEC3             equ $167            ; BASIC's RAM Vector - Console Out
+RSDOS_RVEC4             equ $16a            ; BASIC's RAM Vector - Console In
+RSDOS_RVEC5             equ $16d            ; BASIC's RAM Vector - Input device # check
+RSDOS_RVEC6             equ $170            ; BASIC's RAM Vector - Print device # check
+RSDOS_RVEC7             equ $173            ; BASIC's RAM Vector - Close all files
+RSDOS_RVEC8             equ $176            ; BASIC's RAM Vector - Close one file
+RSDOS_RVEC9             equ $179            ; BASIC's RAM Vector - Print
+RSDOS_RVEC10            equ $17c            ; BASIC's RAM Vector - Input
+RSDOS_RVEC11            equ $17f            ; BASIC's RAM Vector - Break check
+RSDOS_RVEC12            equ $182            ; BASIC's RAM Vector - Inputting a BASIC line
+RSDOS_RVEC13            equ $185            ; BASIC's RAM Vector - Terminating BASIC line input
+RSDOS_RVEC14            equ $188            ; BASIC's RAM Vector - EOF Command
+RSDOS_RVEC15            equ $18b            ; BASIC's RAM Vector - Evaluate an expression
+RSDOS_RVEC16            equ $18e            ; BASIC's RAM Vector - Reserved for ON ERROR GOTO command
+RSDOS_RVEC17            equ $191            ; BASIC's RAM Vector - Error driver
+RSDOS_RVEC18            equ $194            ; BASIC's RAM Vector - Run
+RSDOS_RVEC19            equ $197            ; BASIC's RAM Vector - ASCII to floating point conversion
+RSDOS_RVEC20            equ $19a            ; BASIC's RAM Vector - BASIC's command interpretation loop
+RSDOS_RVEC21            equ $19d            ; BASIC's RAM Vector - Reset/Set/Point commands
+RSDOS_RVEC22            equ $1a0            ; BASIC's RAM Vector - EXBAS' Get/Put
+RSDOS_RVEC23            equ $1a3            ; BASIC's RAM Vector - Crunch BASIC line
+RSDOS_RVEC24            equ $1a6            ; BASIC's RAM Vector - Uncrunch BASIC line
 RSDOS_VIDRAM            equ $400            ; Video Text Low-res display area
 RSDOS_VIDRAM_LEN        equ 512             ; Video Text screen size
 RSDOS_POLCAT            equ $a000           ; get a keystroke
