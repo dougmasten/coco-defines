@@ -5,11 +5,11 @@
 
 
 ; space savings macros
-skip_byte           macro
+skip1               macro
                     fcb $c5                 ; actually a BITB #$xx instruction (2 clocks)
                     endm
 
-skip_word           macro
+skip2               macro
                     fcb $8c                 ; actually a CMPX #$xxxx instruction (3 clocks)
                     endm
 
