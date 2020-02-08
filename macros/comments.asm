@@ -8,7 +8,7 @@ comment             macro
                     if 0
                     endm
 
-end_comment         macro
+endcomment          macro
                     endc
                     endm
 
