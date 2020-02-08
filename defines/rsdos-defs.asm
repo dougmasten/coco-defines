@@ -17,6 +17,12 @@ RSDOS_DCTRK             equ $ec             ; DSKCON track number 0-34
 RSDOS_DSEC              equ $ed             ; DSKCON sector number 1-18
 RSDOS_DCBPT             equ $ee             ; DSKCON data pointer
 RSDOS_DCSTA             equ $f0             ; DSKCON status byte
+RSDOS_SW3VEC            equ $100            ; SWI3 Vector
+RSDOS_SW2VEC            equ $103            ; SWI2 Vector
+RSDOS_SWIVEC            equ $106            ; SWI Vector
+RSDOS_NMIVEC            equ $109            ; NMI Vector
+RSDOS_IRQVEC            equ $10c            ; IRQ Vector
+RSDOS_FRQVEC            equ $10f            ; FIRQ Vector
 RSDOS_RJOY_LR           equ $15a            ; Right joystick, left/right value
 RSDOS_RJOY_UD           equ $15b            ; Right joystick, up/down value
 RSDOS_LJOY_LR           equ $15c            ; Left joystick, left/right value
