@@ -6,14 +6,14 @@
 
                     include boomerang.asm
                     include clear-instructions.asm
+                    include comments.asm
+                    include convenience.asm
                     include fdc.asm
                     include hardware.asm
+                    include optimizations.asm
                     include regcc.asm
                     include shifts.asm
-                    include convenience.asm
-                    include optimizations.asm
                     include test-instructions.asm
-                    include comments.asm
 
 
 MACROS_ALL_LOADED   equ 1                   ; Set flag for macros being loaded
