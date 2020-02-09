@@ -6,7 +6,6 @@
 
                     include boomerang.asm
                     include clear-instructions.asm
-                    include comments.asm
                     include convenience.asm
                     include fdc.asm
                     include hardware.asm
