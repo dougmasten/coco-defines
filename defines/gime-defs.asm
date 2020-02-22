@@ -105,7 +105,7 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ; Bit 7   - n/a
                                             ; Bit 6:5 - Lines per field
                                             ;              00 = 192 lines
-                                            ;              01 = 200 lines
+                                            ;              01 = 200 lines (GIME bug: actually 199 lines)
                                             ;              10 = *zero/infinite lines on screen (210 undefined)
                                             ;              11 = 225 lines
                                             ;
