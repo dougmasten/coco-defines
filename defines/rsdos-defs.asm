@@ -11,6 +11,7 @@ RSDOS_REBOOT_FLAG       equ $71             ; $55=warm boot, other=cold boot
 RSDOS_REBOOT_VECTOR     equ $72             ; Warm start vector - jump address for warm start
 RSDOS_CURPOS            equ $88             ; cursor position
 RSDOS_ZERO              equ $8a             ; dummy - these two bytes are always zero
+RSDOS_EXECJP            equ $9d             ; jump address for exec command
 RSDOS_DCOPC             equ $ea             ; DSKCON operation code 0-3
 RSDOS_DCDRV             equ $eb             ; DSKCON drive number 0-3
 RSDOS_DCTRK             equ $ec             ; DSKCON track number 0-34
