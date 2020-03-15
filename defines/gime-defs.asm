@@ -202,10 +202,12 @@ GIME_MMU1               equ $ffa8           ; MMU bank registers (task 1) (Write
                                             ;  $FFA6  $FFAE    $C000 - $DFFF     6       $3E - Cartridge or Disk Basic ROM
                                             ;  $FFA7  $FFAF    $E000 - $FFFF     7       $3F - Super Basic, GIME regs, I/O
                                             ;
-                                            ;  $30-$3F - 128K
-                                            ;  $00-$3F - 512K
-                                            ;  $00-$7F - 1024K
-                                            ;  $00-$FF - 2048K
+                                            ;  Memory board address ranges
+                                            ;  ---------------------------
+                                            ;  128K  - $30-$3F (Mirror $00-$0F, $10-$1F, $20-$2F, $40-$4F, ...)
+                                            ;  512K  - $00-$3F (Mirror $40-$7F, $80-$BF, $C0-$FF)
+                                            ;  1024K - $00-$7F (Mirror $80-$FF)
+                                            ;  2048K - $00-$FF
                                             ;
                                             ;  * The MMU registers can be read but depending on the memory board the
                                             ;    upper 2 bits must be masked out. This could be a issue with memory
