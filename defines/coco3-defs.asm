@@ -7,7 +7,6 @@
                         ifndef COCO3_DEFS   ; Load defines only once
 
 
-                        include extra-defs.asm
                         include fdc-defs.asm
                         include gime-defs.asm
                         include interrupts-defs.asm

@@ -55,6 +55,16 @@ SAM_F6_CLEAR            equ SAM_F_BASE+12
 SAM_F6_SET              equ SAM_F_BASE+13
 
 
+; Clock Speed
+NORMAL_SPEED_MODE       equ $ffd8           ; Any write selects 0.89 Mhz CPU clock
+HIGH_SPEED_MODE         equ $ffd9           ; Any write selects 1.79 Mhz CPU clock
+
+
+; ROM/RAM Map Type
+ROM_MODE_ENABLE         equ $ffde           ; Any write selects RAM/ROM mode
+RAM_MODE_ENABLE         equ $ffdf           ; Any write selects all-RAM mode
+
+
 SAM_DEFS                equ 1               ; Set flag for defines being loaded
                         endc
                         *pragmapop list     ; restore assembly listing to previous state
