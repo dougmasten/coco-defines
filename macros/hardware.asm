@@ -6,8 +6,8 @@
 
 
 ; make sure defines are included
-                        ifndef EXTRA_DEFS
-                        include ../defines/extra-defs.asm
+                        ifndef SAM_DEFS
+                        include ../defines/sam-defs.asm
                         endc
 
 
