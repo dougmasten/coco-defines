@@ -33,6 +33,37 @@ FDC_CR_DRIVE1          equ %00000010
 FDC_CR_DRIVE0          equ %00000001
 
 
+; FDC Commands
+FDC_CMD_RESTORE        equ $03               ; Restore
+FDC_CMD_SEEK           equ $17               ; Seek
+FDC_CMD_STEP           equ $23               ; Step
+FDC_CMD_STEP_IN        equ $43               ; Step In
+FDC_CMD_STEP_OUT       equ $53               ; Step Out
+FDC_CMD_READ_SECTOR    equ $80               ; Read Sector
+FDC_CMD_WRITE_SECTOR   equ $a0               ; Write Sector
+FDC_CMD_STEP_OUT       equ $c0               ; Read Address
+FDC_CMD_READ_TRACK     equ $e4               ; Read Track
+FDC_CMD_WRITE_TRACK    equ $f4               ; Write Track
+FDC_CMD_FORCE_INTERRUPT equ $d0               ; Force Interrupt
+
+
+; FDC Status for Type I Commands
+FDC_STATUS_NOT_READY   equ %10000000        ; Drive is not ready
+FDC_STATUS_PROTECTED   equ %01000000        ; Write protect is activated
+FDC_STATUS_HEAD_LOADED equ %00100000        ; Head is loaded and engaged
+FDC_STATUS_SEEK_ERROR  equ %00010000        ; Desired track was not verified
+FDC_STATUS_CRC_ERROR   equ %00001000        ; CRC encountered in ID field
+FDC_STATUS_TRACK_0     equ %00000100        ; Read/Write head is positioned to track #0
+FDC_STATUS_INDEX       equ %00000010        ; Index mark detected from drive
+FDC_STATUS_BUSY        equ %00000001        ; Command is in progress
+
+
+; FDC Status for Type II and III Commands
+FDC_WRITE_FAULT        equ %00100000        ; Write fault
+FDC_RNF                equ %00010000        ; Desired track, sector or side was not found
+FDC_DATA_REQUEST       equ %00000010        ;
+
+
 FDC_DEFS                equ 1               ; Set flag for defines being loaded
                         endc
                         *pragmapop list     ; restore assembly listing to previous state
