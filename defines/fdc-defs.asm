@@ -15,7 +15,8 @@ FDC_CTRL                equ $ff40            ; Floppy disk controller control re
                                              ; Bit 2 - Drive select 2
                                              ; Bit 1 - Drive select 1
                                              ; Bit 0 - Drive select 0
-FDC_COMMAND             equ $ff48            ; Floppy command/status register
+FDC_COMMAND             equ $ff48            ; Floppy command register
+FDC_STATUS              equ $ff48            ; Floppy status register
 FDC_TRACK               equ $ff49            ; Floppy disk controller track register
 FDC_SECTOR              equ $ff4a            ; Floppy disk controller sector register
 FDC_DATA                equ $ff4b            ; Floppy disk controller data register
