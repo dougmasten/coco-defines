@@ -41,10 +41,10 @@ FDC_CMD_STEP_IN        equ $43               ; Step In
 FDC_CMD_STEP_OUT       equ $53               ; Step Out
 FDC_CMD_READ_SECTOR    equ $80               ; Read Sector
 FDC_CMD_WRITE_SECTOR   equ $a0               ; Write Sector
-FDC_CMD_STEP_OUT       equ $c0               ; Read Address
+FDC_CMD_READ_ADDRESS   equ $c0               ; Read Address
 FDC_CMD_READ_TRACK     equ $e4               ; Read Track
 FDC_CMD_WRITE_TRACK    equ $f4               ; Write Track
-FDC_CMD_FORCE_INTERRUPT equ $d0               ; Force Interrupt
+FDC_CMD_FORCE_INTERRUPT equ $d0              ; Force Interrupt
 
 
 ; FDC Status for Type I Commands
