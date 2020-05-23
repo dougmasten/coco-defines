@@ -43,8 +43,8 @@ IR1_MEM_64K             equ %00000000
 IR1_MEM_256K            equ %01000000
 IR1_TIMER_63USEC        equ %00000000       ; timer input source of 63 usec
 IR1_TIMER_279NS         equ %00100000       ; timer input source of 279 ns
-IR1_MM0                 equ %00000000
-IR1_MM1                 equ %00000001
+IR1_MMU0                equ %00000000
+IR1_MMU1                equ %00000001
 
 
 GIME_IRQ                equ $ff92           ; Interrupt Request Enable Register (Read and write)
