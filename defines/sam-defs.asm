@@ -57,7 +57,7 @@ SAM_F6_SET              equ SAM_F_BASE+13
 
 ; Clock Speed
 NORMAL_SPEED_MODE       equ $ffd8           ; Any write selects 0.89 Mhz CPU clock
-HIGH_SPEED_MODE         equ $ffd9           ; Any write selects 1.79 Mhz CPU clock
+HIGH_SPEED_MODE         equ $ffd9           ; Any write selects 1.78 Mhz CPU clock
 
 
 ; ROM/RAM Map Type
