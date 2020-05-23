@@ -85,6 +85,8 @@ GIME_TIMER_LSB          equ GIME_TIMER+1    ; Timer bits 7:0 (Write-only)
                                             ; All other values stored are affected the same way:
                                             ;   1986 GIME: nnn+2
                                             ;   1987 GIME: nnn+1
+                                            ;
+                                            ; The timer also controls the rate of blinking text.
 
 GIME_VIDEO_MODE         equ $ff98           ; Video mode register - VMODE (Write-only)
                                             ; Bit 7   - 0 = Text modes, 1 = Graphics modes
