@@ -88,7 +88,7 @@ GIME_TIMER_LSB          equ GIME_TIMER+1    ; Timer bits 7:0 (Write-only)
 
 GIME_VIDEO_MODE         equ $ff98           ; Video mode register - VMODE (Write-only)
                                             ; Bit 7   - 0 = Text modes, 1 = Graphics modes
-                                            ; Bit 6   - n/a
+                                            ; Bit 6   - 0 = Normal, 1 = GIME-X New Video Modes (See $FF99)
                                             ; Bit 5   - 1 = Composite color phase invert
                                             ; Bit 4   - 1 = Monochrome on Composite video output
                                             ; Bit 3   - 0 = 60Hz video, 1 = 50Hz video
@@ -126,6 +126,10 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ;               1x0 = 64 characters per row
                                             ;               1x1 = 80 characters per row
                                             ;
+                                            ;             GIME-X: (Set bit 6 in $FF98)
+                                            ;               000 = 320 bytes per row
+                                            ;               001 = 640 bytes per row
+                                            ;
                                             ; Bit 1:0 - Color resolution bits CRES
                                             ;             Graphics:
                                             ;               00 = 2 colors (8 pixels per byte)
@@ -136,6 +140,9 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ;             Text:
                                             ;               x0 = No color attributes
                                             ;               x1 = Color attributes enabled
+                                            ;
+                                            ;             GIME-X: (Set bit 6 in $FF98)
+                                            ;               11 = 256 colors (1 pixel per byte)
                                             ;
                                             ; Graphics modes:
                                             ;         HRES   CRES   Commonly used graphics mode
