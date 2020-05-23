@@ -100,6 +100,18 @@ GIME_VIDEO_MODE         equ $ff98           ; Video mode register - VMODE (Write
                                             ;            101 = 10 lines per row
                                             ;            110 = 11 lines per row
                                             ;            111 = *infinite lines per row
+VM_TEXT                 equ %00000000
+VM_GRX                  equ %10000000
+VM_INVERT               equ %00100000
+VM_MONO                 equ %00010000
+VM_60HZ                 equ %00000000
+VM_50HZ                 equ %00001000
+VM_1_LPR                equ %00000000
+VM_2_LPR                equ %00000010
+VM_8_LPR                equ %00000011
+VM_9_LPR                equ %00000100
+VM_10_LPR               equ %00000101
+VM_11_LPR               equ %00000110
 
 GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (Write-only)
                                             ; Bit 7   - n/a
@@ -163,6 +175,25 @@ GIME_VIDEO_RES          equ $ff99           ; Video resolution register - VRES (
                                             ;         100    10      128 pixels, 16 colors
                                             ;         010    01      128 pixels, 4 colors
                                             ;         000    00      128 pixels, 2 colors
+VR_192_LINES            equ %00000000
+VR_200_LINES            equ %00100000
+VR_225_LINES            equ %01100000
+VR_GRX_16_BPR           equ %00000000
+VR_GRX_20_BPR           equ %00000100
+VR_GRX_32_BPR           equ %00001000
+VR_GRX_40_BPR           equ %00001100
+VR_GRX_64_BPR           equ %00010000
+VR_GRX_80_BPR           equ %00010100
+VR_GRX_128_BPR          equ %00011000
+VR_GRX_160_BPR          equ %00011100
+VR_TXT_32_CPR           equ %00000000
+VR_TXT_40_CPR           equ %00000100
+VR_TXT_64_CPR           equ %00010000
+VR_TXT_80_CPR           equ %00010100
+VR_GRX_2_COLORS         equ %00000000
+VR_GRX_4_COLORS         equ %00000001
+VR_GRX_16_COLORS        equ %00000010
+VR_TXT_COLOR            equ %00000001
 
 GIME_BORDER_PALETTE     equ $ff9a           ; Border color register (Write-only)
                                             ; Bit 7:6 - n/a
