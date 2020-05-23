@@ -20,15 +20,15 @@ GIME_INIT0              equ $ff90           ; Initialization Register 0 (Write-o
                                             ;                               11 = 32K external (except interrupt vectors)
 
 ; Initialization register bit flags (Used for GIME_INIT0)
-IR0_Compatible          equ %10000000
+IR0_COMPATIBLE          equ %10000000
 IR0_MMU                 equ %01000000
 IR0_IRQ                 equ %00100000
 IR0_FIRQ                equ %00010000
-IR0_VectorRAM           equ %00001000
-IR0_StandardSCS         equ %00000100
-IR0_ROMInt16kExt16K     equ %00000000
-IR0_ROMInt32k           equ %00000010
-IR0_ROMExt32K           equ %00000011
+IR0_VECTOR_RAM          equ %00001000
+IR0_STANDARD_SCS        equ %00000100
+IR0_ROM_INT_16K_EXT_16K equ %00000000
+IR0_ROM_INT_32K         equ %00000010
+IR0_ROM_EXT_32K         equ %00000011
 
 GIME_INIT1              equ $ff91           ; Initialization Register 1 (Write-only)
                                             ; Bit 7   - n/a
@@ -39,10 +39,10 @@ GIME_INIT1              equ $ff91           ; Initialization Register 1 (Write-o
                                             ;                                     1 = enable $FFA8-$FFAF MMU registers
 
 ; Initialization register bit flags (Used for GIME_INIT1)
-IR1_Memory_64K          equ %00000000
-IR1_Memory_256K         equ %01000000
-IR1_Timer_63usec        equ %00000000       ; timer input source of 63 usec
-IR1_Timer_279ns         equ %00100000       ; timer input source of 279 ns
+IR1_MEM_64K             equ %00000000
+IR1_MEM_256K            equ %01000000
+IR1_TIMER_63USEC        equ %00000000       ; timer input source of 63 usec
+IR1_TIMER_279NS         equ %00100000       ; timer input source of 279 ns
 IR1_MM0                 equ %00000000
 IR1_MM1                 equ %00000001
 
