@@ -37,8 +37,14 @@ GIMEX_DMA_DATA_LSB      equ $ffe9           ; low byte of 16-bit data
 GIMEX_VERSION           equ $ffef           ; GIME-X Version #
 
 
-; New Video Modes
-; See $FF98 and $FF99 in gime-defs.asm
+; GIME_VIDEO_MODE ($FF98)
+VM_GIMEX_NEW_VIDEO      equ %01000000       ; Activate GIME-X new video modes
+
+
+; GIME_VIDEO_RES ($FF99)
+VR_GIMEX_GRX_320_BPR    equ %00000000       ; 320 bytes per row
+VR_GIMEX_GRX_640_BPR    equ %00000100       ; 640 bytes per row
+VR_GIMEX_GRX_256_COLORS equ %00000011       ; 256 colors (1 pixel per byte)
 
 
 ; Video palette - 9-bit RGB
