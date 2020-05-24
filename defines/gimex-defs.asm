@@ -20,6 +20,16 @@ GIMEX_SPEED_MAGIC       equ $a5             ; Magic value to select 2.86 MHz spe
                                             ;    STA HIGH_SPEED_MODE  ; select 2.86 MHz mode
 
 
+; GIME_VIDEO_MODE ($FF98) option
+VM_GIMEX_NEW_VIDEO      equ %01000000       ; Activate GIME-X new video modes
+
+
+; GIME_VIDEO_RES ($FF99) option
+VR_GIMEX_GRX_320_BPR    equ %00000000       ; 320 bytes per row
+VR_GIMEX_GRX_640_BPR    equ %00000100       ; 640 bytes per row
+VR_GIMEX_GRX_256_COLORS equ %00000011       ; 256 colors (1 pixel per byte)
+
+
 ; Direct Memory Access
 GIMEX_DMA_DEST_MSB      equ $ffe1           ; Destination Address: bits 20-16
 GIMEX_DMA_DEST_CSB      equ $ffe2           ; Destination Address: bits 15-8
@@ -35,16 +45,6 @@ GIMEX_DMA_DATA_MSB      equ $ffe8           ; 8-bit data or high byte of 16-bit 
 GIMEX_DMA_DATA_LSB      equ $ffe9           ; low byte of 16-bit data
 
 GIMEX_VERSION           equ $ffef           ; GIME-X Version #
-
-
-; GIME_VIDEO_MODE ($FF98)
-VM_GIMEX_NEW_VIDEO      equ %01000000       ; Activate GIME-X new video modes
-
-
-; GIME_VIDEO_RES ($FF99)
-VR_GIMEX_GRX_320_BPR    equ %00000000       ; 320 bytes per row
-VR_GIMEX_GRX_640_BPR    equ %00000100       ; 640 bytes per row
-VR_GIMEX_GRX_256_COLORS equ %00000011       ; 256 colors (1 pixel per byte)
 
 
 ; Video palette - 9-bit RGB
