@@ -45,6 +45,18 @@ GIMEX_DMA_DATA_MSB      equ $ffe8           ; 8-bit data or high byte of 16-bit 
 GIMEX_DMA_DATA_LSB      equ $ffe9           ; low byte of 16-bit data
 
 GIMEX_VERSION           equ $ffef           ; GIME-X Version #
+                                            ; Bits 7:4 = Major Version
+                                            ; Bits 3:1 = Minor Version
+                                            ; Bit 0    = SDR/DDR Flag (1 = DDR)
+                                            ;
+                                            ; SDR (Standard data rate) supports all memory types,
+                                            ; but does not support >160 bytes per line video modes or
+                                            ; the 2.86 MHz turbo mode.
+                                            ;
+                                            ; DDR (Double data rate) supports all GIME-X features.
+                                            ; A fast SRAM memory upgrade (Triad 2MB, Boomerange E2 w/ a
+                                            ; firmware upgrade, or Zippster 2MB board) will be needed
+                                            ; to use this configuration.
 
 
 ; Video palette - 9-bit RGB
