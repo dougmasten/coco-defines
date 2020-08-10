@@ -55,8 +55,7 @@ GIMEX_VERSION           equ $ffef           ; GIME-X Version #
                                             ;
                                             ; DDR (Double data rate) supports all GIME-X features.
                                             ; A fast SRAM memory upgrade (Triad 2MB, Boomerange E2 w/ a
-                                            ; firmware upgrade, or Zippster 2MB board) will be needed
-                                            ; to use this configuration.
+                                            ; firmware upgrade, or Zippster 2MB board) is required.
 
 
 ; Video palette - 9-bit RGB
