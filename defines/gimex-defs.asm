@@ -11,6 +11,9 @@
 ; Acceleration mode
 GIMEX_SPEED_MAGIC       equ $a5             ; Magic value to select 2.86 MHz speed
                                             ;
+                                            ; Acceleration mode is only supported on DDR firmware with
+                                            ; a fast SRAM memory upgrade.
+                                            ;
                                             ; 1) First system must be in 1.78 MHz mode (STA $FFD9).
                                             ; 2) And then write $A5 to $FFD9. (LDA #$A5; STA $FFD9).
                                             ;
