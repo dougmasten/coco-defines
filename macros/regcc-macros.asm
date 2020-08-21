@@ -11,14 +11,6 @@
 
 
 ; convenient macros
-disable_interrupts  macro
-                    orcc #CC_FIRQ+CC_IRQ
-                    endm
-
-enable_interrupts   macro
-                    andcc #^(CC_FIRQ+CC_IRQ)
-                    endm
-
 clear_stack_flag    macro
                     andcc #^CC_STACK
                     endm
@@ -83,6 +75,29 @@ set_carry_flag      macro
                     orcc #CC_CARRY
                     endm
 
+disable_interrupts  macro
+                    orcc #CC_FIRQ+CC_IRQ
+                    endm
+
+enable_interrupts   macro
+                    andcc #^(CC_FIRQ+CC_IRQ)
+                    endm
+
+disable_firq        macro
+                    set_firq_flag
+                    endm
+
+enable_firq         macro
+                    clear_firq_flag
+                    endm
+
+disable_irq         macro
+                    set_irq_flag
+                    endm
+
+enable_irq          macro
+                    clear_irq_flag
+                    endm
 
 REGCC_MACROS        equ 1                   ; Set flag for macros being loaded
                     endc
