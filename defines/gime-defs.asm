@@ -201,15 +201,15 @@ GIME_BORDER_PALETTE     equ $ff9a           ; Border color register (Write-only)
                                             ; Bit 7:6 - n/a
                                             ; Bit 5:0 - Border color (same format as GIME_PALETTE)
 
-GIME_MMU_EXT            equ $ff9b           ; Distro and NoCan Memory Upgrade
+GIME_MMU_EXT            equ $ff9b           ; Disto and NoCan Memory Upgrade
                                             ; Bit 7 - 16MB Video Bit            NoCan3 bits for 16MB (Write only)
                                             ; Bit 6 - 16MB Memory Bit           NoCan3 bits for 16MB
                                             ; Bit 5 -  8MB Memory Bit           NoCan3 bits for 8MB
                                             ; Bit 4 -  4MB Memory Bit           NoCan3 bits for 8MB
                                             ; Bit 3 -  8MB Video Bit            NoCan3 bits for 8MB
                                             ; Bit 2 -  4MB Video Bit            NoCan3 bits for 8MB
-                                            ; Bit 1 -  2MB Video Bit   Distro & NoCan2/3 bits for 2MB (Write only)
-                                            ; Bit 0 -  1MB Video Bit   Distro & NoCan2/3 bits for 1MB (Write only)
+                                            ; Bit 1 -  2MB Video Bit    Disto & NoCan2/3 bits for 2MB (Write only)
+                                            ; Bit 0 -  1MB Video Bit    Disto & NoCan2/3 bits for 1MB (Write only)
                                             ;
                                             ; Only bits 4-6 are sequence dependant. All other bits are immediate.
                                             ; 1. Write page bits to $FF9B, bits 4-6 only,
