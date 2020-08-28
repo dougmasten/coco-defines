@@ -10,7 +10,7 @@ GIME_BASE               equ $ff90
 
 GIME_INIT0              equ $ff90           ; Initialization Register 0 (Write-only)
                                             ; Bit 7 - 1 = CoCo 1/2 Video Mode compatible, 0 = CoCo 3 Video Modes
-                                            ; Bit 6 - 1 = MMU enabled, 0 = GIME maps block 38-3F by default
+                                            ; Bit 6 - 1 = MMU enabled, 0 = GIME maps block $38-$3F by default
                                             ; Bit 5 - 1 = GIME chip IRQ enabled
                                             ; Bit 4 - 1 = GIME chip FIRQ enabled
                                             ; Bit 3 - 1 = Vector RAM at $FExx enabled
