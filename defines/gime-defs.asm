@@ -31,12 +31,15 @@ IR0_ROM_INT_32K         equ %00000010
 IR0_ROM_EXT_32K         equ %00000011
 
 GIME_INIT1              equ $ff91           ; Initialization Register 1 (Write-only)
-                                            ; Bit 7   - n/a
-                                            ; Bit 6   - Memory type: 0 = 64K chips, 1 = 256K chips
-                                            ; Bit 5   - Timer Input clock select: 0 = 63.695 usec, 1 = 279.365 nsec
-                                            ; Bit 4:1 - n/a
-                                            ; Bit 0   - MMU Task register select: 0 = enable $FFA0-$FFA7 MMU registers
-                                            ;                                     1 = enable $FFA8-$FFAF MMU registers
+                                            ; Bit 7 - n/a
+                                            ; Bit 6 - n/a
+                                            ; Bit 5 - Timer input select: 0 = 63.695 usec, 1 = 279.365 nsec
+                                            ; Bit 4 - n/a
+                                            ; Bit 3 - n/a
+                                            ; Bit 2 - n/a
+                                            ; Bit 1 - n/a
+                                            ; Bit 0 - MMU Task register select: 0 = enable $FFA0-$FFA7 MMU registers
+                                            ;                                   1 = enable $FFA8-$FFAF MMU registers
 
 ; Initialization register bit flags (Used for GIME_INIT1)
 IR1_MEM_64K             equ %00000000
@@ -48,22 +51,24 @@ IR1_MMU1                equ %00000001
 
 
 GIME_IRQ                equ $ff92           ; Interrupt Request Enable Register (Read and write)
-                                            ; Bit 7:6 - n/a
-                                            ; Bit 5   - 1 = enable Timer IRQ
-                                            ; Bit 4   - 1 = enable HSYNC IRQ
-                                            ; Bit 3   - 1 = enable VSYNC IRQ
-                                            ; Bit 2   - 1 = enable Serial IRQ
-                                            ; Bit 1   - 1 = enable Keyboard IRQ
-                                            ; Bit 0   - 1 = enable Cartridge IRQ
+                                            ; Bit 7 - n/a
+                                            ; Bit 6 - n/a
+                                            ; Bit 5 - 1 = enable Timer IRQ
+                                            ; Bit 4 - 1 = enable HSYNC IRQ
+                                            ; Bit 3 - 1 = enable VSYNC IRQ
+                                            ; Bit 2 - 1 = enable Serial IRQ
+                                            ; Bit 1 - 1 = enable Keyboard IRQ
+                                            ; Bit 0 - 1 = enable Cartridge IRQ
 
 GIME_FIRQ               equ $ff93           ; Fast Interrupt Request Enable Register (Read and write)
-                                            ; Bit 7:6 - n/a
-                                            ; Bit 5   - 1 = enable Timer FIRQ
-                                            ; Bit 4   - 1 = enable HSYNC FIRQ
-                                            ; Bit 3   - 1 = enable VSYNC FIRQ
-                                            ; Bit 2   - 1 = enable Serial FIRQ
-                                            ; Bit 1   - 1 = enable Keyboard FIRQ
-                                            ; Bit 0   - 1 = enable Cartridge FIRQ
+                                            ; Bit 7 - n/a
+                                            ; Bit 6 - n/a
+                                            ; Bit 5 - 1 = enable Timer FIRQ
+                                            ; Bit 4 - 1 = enable HSYNC FIRQ
+                                            ; Bit 3 - 1 = enable VSYNC FIRQ
+                                            ; Bit 2 - 1 = enable Serial FIRQ
+                                            ; Bit 1 - 1 = enable Keyboard FIRQ
+                                            ; Bit 0 - 1 = enable Cartridge FIRQ
 
 ; CoCo 3 Interrupt Flags (Used for GIME_IRQ and GIME_FIRQ)
 TIMER_INTERRUPT         equ %00100000       ; Cenerated whenever the 12 bit timer counts down to zero
@@ -201,15 +206,15 @@ GIME_BORDER_PALETTE     equ $ff9a           ; Border color register (Write-only)
                                             ; Bit 7:6 - n/a
                                             ; Bit 5:0 - Border color (same format as GIME_PALETTE)
 
-GIME_MMU_EXT            equ $ff9b           ; Disto and NoCan Memory Upgrade
-                                            ; Bit 7 - 16MB Video Bit            NoCan3 bits for 16MB (Write only)
-                                            ; Bit 6 - 16MB Memory Bit           NoCan3 bits for 16MB
-                                            ; Bit 5 -  8MB Memory Bit           NoCan3 bits for 8MB
-                                            ; Bit 4 -  4MB Memory Bit           NoCan3 bits for 8MB
-                                            ; Bit 3 -  8MB Video Bit            NoCan3 bits for 8MB
-                                            ; Bit 2 -  4MB Video Bit            NoCan3 bits for 8MB
-                                            ; Bit 1 -  2MB Video Bit    Disto & NoCan2/3 bits for 2MB (Write only)
-                                            ; Bit 0 -  1MB Video Bit    Disto & NoCan2/3 bits for 1MB (Write only)
+GIME_MMU_EXT            equ $ff9b           ; Extended Memory Upgrade (2MB+)
+                                            ; Bit 7 - 16MB Video Bit
+                                            ; Bit 6 - 16MB Memory Bit
+                                            ; Bit 5 -  8MB Memory Bit
+                                            ; Bit 4 -  4MB Memory Bit
+                                            ; Bit 3 -  8MB Video Bit
+                                            ; Bit 2 -  4MB Video Bit
+                                            ; Bit 1 -  2MB Video Bit
+                                            ; Bit 0 -  1MB Video Bit
                                             ;
                                             ; Only bits 4-6 are sequence dependant. All other bits are immediate.
                                             ; 1. Write page bits to $FF9B, bits 4-6 only,
