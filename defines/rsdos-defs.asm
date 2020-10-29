@@ -24,6 +24,7 @@ RSDOS_SWIVEC            equ $106            ; SWI Vector
 RSDOS_NMIVEC            equ $109            ; NMI Vector
 RSDOS_IRQVEC            equ $10c            ; IRQ Vector
 RSDOS_FRQVEC            equ $10f            ; FIRQ Vector
+RSDOS_TIMER             equ $112            ; Timer value for ExBasic
 RSDOS_RJOY_LR           equ $15a            ; Right joystick, left/right value
 RSDOS_RJOY_UD           equ $15b            ; Right joystick, up/down value
 RSDOS_LJOY_LR           equ $15c            ; Left joystick, left/right value
