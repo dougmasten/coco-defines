@@ -11,7 +11,7 @@
                     include hardware-macros.asm
                     include optimizations-macros.asm
                     include regcc-macros.asm
-                    include shifts-macros.asm
+                    include shift-macros.asm
                     include test-instructions-macros.asm
 
 

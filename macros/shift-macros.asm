@@ -1,17 +1,12 @@
-; shifts.asm
+; shift-macros.asm
 
                     *pragmapush list        ; Save state of list pragma
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
                     ifndef SHIFT_MACROS     ; Load macros only once
 
 
-                    ifndef repeat4
-repeat4             macro
-                    \1
-                    \1
-                    \1
-                    \1
-                    endm
+                    ifndef REPEAT_MACRO
+                    include repeat-macros.asm
                     endc
 
 
@@ -51,4 +46,3 @@ lsl4b               macro
 SHIFT_MACROS        equ 1                   ; Set flag for macros being loaded
                     endc
                     *pragmapop list         ; restore assembly listing to previous state
-
