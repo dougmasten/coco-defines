@@ -1,8 +1,44 @@
-; repeat.asm
+; repeat-macros.asm
 
                        *pragmapush list    ; Save state of list pragma
                        pragma nolist       ; Turn off assembly listing and exclude from symbol list
                        ifndef REPEAT_MACRO ; Load macro only once
+
+
+; set defaults in case repeat macro is never used to pass assembler stage #1 checks
+repeatc                set 1
+repeat32_count         set 1
+repeat16_count         set 1
+repeat8_count          set 1
+repeat4_count          set 1
+repeat2_count          set 1
+repeat1_count          set 1
+
+repeat2                macro
+                       \1
+                       \1
+                       endm
+
+repeat4                macro
+                       repeat2 \1
+                       repeat2 \1
+                       endm
+
+repeat8                macro
+                       repeat4 \1
+                       repeat4 \1
+                       endm
+
+repeat16               macro
+                       repeat8 \1
+                       repeat8 \1
+                       endm
+
+repeat32               macro
+                       repeat16 \1
+                       repeat16 \1
+                       endm
+
 
 ;------------------------------------------------------------------------------
 ; Repeat a macro X number of times
@@ -22,7 +58,6 @@
 ;
 ;   repeat lsra,4                          ; repeat instruction "lsra" four times
 ;------------------------------------------------------------------------------
-
 repeat                 macro
                        *pragmapush list    ; Save state of list pragma
                        pragma nolist       ; Turn off assembly listing and exclude from symbol list
@@ -43,49 +78,23 @@ repeat1_count            set repeatc/1
 repeatc                  set repeatc-repeat1_count
 
                          ifne repeat32_count
-                           repeat32 \1,repeat32_count
+                           repeat32_m \1,repeat32_count
                          endc
 
                          ifne repeat16_count
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
+                           repeat16 \1
                          endc
 
                          ifne repeat8_count
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
-                           \1
+                           repeat8 \1
                          endc
 
                          ifne repeat4_count
-                           \1
-                           \1
-                           \1
-                           \1
+                           repeat4 \1
                          endc
 
                          ifne repeat2_count
-                           \1
-                           \1
+                           repeat2 \1
                          endc
 
                          ifne repeat1_count
@@ -97,42 +106,11 @@ repeatc                  set repeatc-repeat1_count
                        endm
 
 
-repeat32               macro
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
-                       \1
+repeat32_m             macro
+                       repeat32 \1
 repeat32_count         set \2-1
                        ifgt repeat32_count
-                         repeat32 \1,repeat32_count
+                         repeat32_m \1,repeat32_count
                        endc
                        endm
 
