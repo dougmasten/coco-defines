@@ -11,35 +11,35 @@
 
 
 asl4a               macro
-                    repeat4 asla
+                    rpt 4,asla
                     endm
 
 asl4b               macro
-                    repeat4 aslb
+                    rpt 4,aslb
                     endm
 
 asr4a               macro
-                    repeat4 asra
+                    rpt 4,asra
                     endm
 
 asr4b               macro
-                    repeat4 asrb
+                    rpt 4,asrb
                     endm
 
 lsr4a               macro
-                    repeat4 lsra
+                    rpt 4,lsra
                     endm
 
 lsr4b               macro
-                    repeat4 lsrb
+                    rpt 4,lsrb
                     endm
 
 lsl4a               macro
-                    repeat4 lsla
+                    rpt 4,lsla
                     endm
 
 lsl4b               macro
-                    repeat4 lslb
+                    rpt 4,lslb
                     endm
 
 
