@@ -9,58 +9,58 @@
 ; Repeat a macro X number of times
 ;
 ; examples:
-;   1) rpt 4,lsra                     ; repeat instruction "lsra" four times
+;   1) repeat 4,lsra                  ; repeat instruction "lsra" four times
 ;
 ;   2) copy_one_line macro            ; an example of a macro to repeat
 ;                    lda ,u
 ;                    sta ,x
 ;                    abx
 ;                    endm
-;      rpt 100,copy_one_line          ; repeat macro 100 times
+;      repeat 100,copy_one_line       ; repeat macro 100 times
 ;
-;   3) rpt 4,lsra,rorb                ; repeat combination up to 8
+;   3) repeat 4,lsra,rorb             ; repeat combination up to 8
 ;
 ;------------------------------------------------------------------------------
-rpt               macro
+repeat            macro
                   *pragmapush list    ; Save state of list pragma
                   pragma nolist       ; Turn off assembly listing and exclude from symbol list
 
-rpt_count         set \1
-                  ifne rpt_count      ; test for zero repeat case
+repeat_count      set \1
+                  ifne repeat_count   ; test for zero repeat case
 
-rpt32_count         set rpt_count/32
-rpt_count           set rpt_count-(rpt32_count*32)
-rpt16_count         set rpt_count/16
-rpt_count           set rpt_count-(rpt16_count*16)
-rpt8_count          set rpt_count/8
-rpt_count           set rpt_count-(rpt8_count*8)
-rpt4_count          set rpt_count/4
-rpt_count           set rpt_count-(rpt4_count*4)
-rpt2_count          set rpt_count/2
-rpt1_count          set rpt_count-(rpt2_count*2)
+repeat32_count      set repeat_count/32
+repeat_count        set repeat_count-(repeat32_count*32)
+repeat16_count      set repeat_count/16
+repeat_count        set repeat_count-(repeat16_count*16)
+repeat8_count       set repeat_count/8
+repeat_count        set repeat_count-(repeat8_count*8)
+repeat4_count       set repeat_count/4
+repeat_count        set repeat_count-(repeat4_count*4)
+repeat2_count       set repeat_count/2
+repeat1_count       set repeat_count-(repeat2_count*2)
 
-                    ifne rpt32_count
-                      rpt32plus rpt32_count,\2,\3,\4,\5,\6,\7,\8
+                    ifne repeat32_count
+                      repeat32plus repeat32_count,\2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
-                    ifne rpt16_count
-                      rpt16 \2,\3,\4,\5,\6,\7,\8
+                    ifne repeat16_count
+                      repeat16 \2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
-                    ifne rpt8_count
-                      rpt8 \2,\3,\4,\5,\6,\7,\8
+                    ifne repeat8_count
+                      repeat8 \2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
-                    ifne rpt4_count
-                      rpt4 \2,\3,\4,\5,\6,\7,\8
+                    ifne repeat4_count
+                      repeat4 \2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
-                    ifne rpt2_count
-                      rpt2 \2,\3,\4,\5,\6,\7,\8
+                    ifne repeat2_count
+                      repeat2 \2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
-                    ifne rpt1_count
-                      rpt1 \2,\3,\4,\5,\6,\7,\8
+                    ifne repeat1_count
+                      repeat1 \2,\3,\4,\5,\6,\7,\8,\9
                     endc
 
                   endc
@@ -68,7 +68,7 @@ rpt1_count          set rpt_count-(rpt2_count*2)
                   endm
 
 
-rpt1              macro noexpand
+repeat1           macro noexpand
                   \1
                   \2
                   \3
@@ -79,36 +79,36 @@ rpt1              macro noexpand
                   \8
                   endm
 
-rpt2              macro noexpand
-                  rpt1 \1,\2,\3,\4,\5,\6,\7,\8
-                  rpt1 \1,\2,\3,\4,\5,\6,\7,\8
+repeat2           macro noexpand
+                  repeat1 \1,\2,\3,\4,\5,\6,\7,\8
+                  repeat1 \1,\2,\3,\4,\5,\6,\7,\8
                   endm
 
-rpt4              macro noexpand
-                  rpt2 \1,\2,\3,\4,\5,\6,\7,\8
-                  rpt2 \1,\2,\3,\4,\5,\6,\7,\8
+repeat4           macro noexpand
+                  repeat2 \1,\2,\3,\4,\5,\6,\7,\8
+                  repeat2 \1,\2,\3,\4,\5,\6,\7,\8
                   endm
 
-rpt8              macro noexpand
-                  rpt4 \1,\2,\3,\4,\5,\6,\7,\8
-                  rpt4 \1,\2,\3,\4,\5,\6,\7,\8
+repeat8           macro noexpand
+                  repeat4 \1,\2,\3,\4,\5,\6,\7,\8
+                  repeat4 \1,\2,\3,\4,\5,\6,\7,\8
                   endm
 
-rpt16             macro noexpand
-                  rpt8 \1,\2,\3,\4,\5,\6,\7,\8
-                  rpt8 \1,\2,\3,\4,\5,\6,\7,\8
+repeat16          macro noexpand
+                  repeat8 \1,\2,\3,\4,\5,\6,\7,\8
+                  repeat8 \1,\2,\3,\4,\5,\6,\7,\8
                   endm
 
-rpt32             macro noexpand
-                  rpt16 \1,\2,\3,\4,\5,\6,\7,\8
-                  rpt16 \1,\2,\3,\4,\5,\6,\7,\8
+repeat32          macro noexpand
+                  repeat16 \1,\2,\3,\4,\5,\6,\7,\8
+                  repeat16 \1,\2,\3,\4,\5,\6,\7,\8
                   endm
 
-rpt32plus         macro
-                  rpt32 \2,\3,\4,\5,\6,\7,\8
-rpt32_count       set \1-1
-                  ifgt rpt32_count
-                    rpt32plus rpt32_count,\2,\3,\4,\5,\6,\7,\8
+repeat32plus      macro noexpand
+                  repeat32 \2,\3,\4,\5,\6,\7,\8,\9
+repeat32_count    set \1-1
+                  ifgt repeat32_count
+                    repeat32plus repeat32_count,\2,\3,\4,\5,\6,\7,\8,\9
                   endc
                   endm
 
