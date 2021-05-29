@@ -4,11 +4,7 @@
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
                     ifndef SHIFT_MACROS     ; Load macros only once
 
-
-                    ifndef REPEAT_MACRO
                     include repeat-macros.asm
-                    endc
-
 
 asl4a               macro
                     repeat 4,asla
