@@ -8,13 +8,13 @@
 ; Set defaults in case repeat macro is never called to pass assembler
 ; checks. Otherwise assembler will stop with error "Conditions must
 ; be constant on pass 1"
-repeat_count      set 1
-repeat1_count     set 1
-repeat2_count     set 1
-repeat4_count     set 1
-repeat8_count     set 1
-repeat16_count    set 1
-repeat32_count    set 1
+repeat_count      set 0
+repeat1_count     set 0
+repeat2_count     set 0
+repeat4_count     set 0
+repeat8_count     set 0
+repeat16_count    set 0
+repeat32_count    set 0
 
 
 ;------------------------------------------------------------------------------
