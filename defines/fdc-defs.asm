@@ -80,12 +80,20 @@ FDC_STEP_20MS           equ %00000010        ; 20 ms
 FDC_STEP_30MS           equ %00000011        ; 30 ms
 
 ; FDC Track Update Flag
-FDC_TRACK_UPDATE_ON     equ %00010000        ; Update track register
-FDC_TRACK_UPDATE_OFF    equ 0                ; no update
+FDC_UPDATE_TRACK_REG    equ %00010000        ; update track register
+FDC_NO_UPDATE_TRACK_REG equ 0                ; no update
+
+; FDC Head Load Flag
+FDC_LOAD_HEAD           equ %00001000        ; load head at beginning
+FDC_UNLOAD_LOAD         equ 0                ; unload head
+
+; FDC Multiple Record Flag
+FDC_MULTIPLE_RECORDS    equ %00010000        ; multiple records
+FDC_SINGLE_RECORD       equ 0                ; single records
 
 ; FDC Commands Type I
 FDC_CMD_RESTORE         equ %00000000        ; Restore (Seek track #0)
-FDC_CMD_SEEK            equ %00010100        ; Seek
+FDC_CMD_SEEK            equ %00010000        ; Seek
 FDC_CMD_STEP            equ %00100000        ; Step
 FDC_CMD_STEP_IN         equ %01000000        ; Step In
 FDC_CMD_STEP_OUT        equ %01100000        ; Step Out
