@@ -88,8 +88,8 @@ FDC_LOAD_HEAD           equ %00001000        ; load head at beginning
 FDC_UNLOAD_LOAD         equ 0                ; unload head
 
 ; FDC Multiple Record Flag
-FDC_MULTIPLE_RECORDS    equ %00010000        ; multiple records
-FDC_SINGLE_RECORD       equ 0                ; single records
+FDC_MULT_RECORDS        equ %00010000        ; multiple records
+FDC_ONE_RECORD          equ 0                ; single records
 
 ; FDC Commands Type I
 FDC_CMD_RESTORE         equ %00000000        ; Restore (Seek track #0)
