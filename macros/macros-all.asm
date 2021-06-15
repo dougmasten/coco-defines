@@ -7,7 +7,6 @@
                     include boomerang-macros.asm
                     include clear-instructions-macros.asm
                     include convenience-macros.asm
-                    include fdc-macros.asm
                     include hardware-macros.asm
                     include optimizations-macros.asm
                     include regcc-macros.asm
