@@ -41,8 +41,7 @@ wait4                   macro
 ; wait 5 clock cycles
 wait5                   macro
                         ifpragma 6809
-                          nop
-                          bra *+2
+                          fdb $3400             ; PSHS #0
                         else
                           exg 0,0
                         endc
