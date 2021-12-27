@@ -73,7 +73,7 @@ GIME_FIRQ               equ $ff93           ; Fast Interrupt Request Enable Regi
 ; CoCo 3 Interrupt Flags (Used for GIME_IRQ and GIME_FIRQ)
 TIMER_INTERRUPT         equ %00100000       ; Cenerated whenever the 12 bit timer counts down to zero
 HSYNC_INTERRUPT         equ %00010000       ; Generated on the falling edge of HSYNC
-VSYNC_INTERRUPT         equ %00001000       ; Generated on the falling edgde of VSYNC
+VSYNC_INTERRUPT         equ %00001000       ; Generated on the falling edge of VSYNC
 SERIAL_INTERRUPT        equ %00000100       ; Generated on the falling edge fo the signal on PIN 4 of the serial port
 KEY_INTERRUPT           equ %00000010       ; Generated whenever a zero appears on any one of PA0-PA6 on the PIA0
 CART_INTERRUPT          equ %00000001       ; Generated on the falling edge of the signal on PIN 8 of the cartridge port
