@@ -24,49 +24,49 @@ a@                  equ *
 
 
 ; faster long branch instructions if branch is not taken (same cycles otherwise but with one extra byte)
-long_bcc            macro
+jcc                 macro
                     bcs a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bcs            macro
+jcs                 macro
                     bcc a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_beq            macro
+jeq                 macro
                     bne a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bmi            macro
+jmi                 macro
                     bpl a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bne            macro
+jne                 macro
                     beq a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bpl            macro
+jpl                 macro
                     bmi a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bvc            macro
+jvc                 macro
                     bvs a@
                     jmp \1
 a@                  equ *
                     endm
 
-long_bvs            macro
+jvs                 macro
                     bvc a@
                     jmp \1
 a@                  equ *
