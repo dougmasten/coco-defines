@@ -1,4 +1,4 @@
-; optimizations-macros.asm
+; optimizations.asm
                     *pragmapush list        ; Save state of list pragma
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
                     ifndef MACROS_OPTIMIZE_DEFS  ; Load macros only once

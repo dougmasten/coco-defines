@@ -1,4 +1,4 @@
-; repeat-macros.asm
+; repeat.asm
 
                   *pragmapush list    ; Save state of list pragma
                   pragma nolist       ; Turn off assembly listing and exclude from symbol list
@@ -7,7 +7,7 @@
 
 ; Set defaults in case repeat macro is never called to pass assembler
 ; checks. Otherwise assembler will stop with error "Conditions must
-; be constant on pass 1"
+; be constant on pass 1".
 repeat_count      set 0
 repeat1_count     set 0
 repeat2_count     set 0
