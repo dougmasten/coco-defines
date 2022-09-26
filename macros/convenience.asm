@@ -67,6 +67,59 @@ tstq                macro
                     endm
                     endc
 
+
+; shift left/right 4 times
+asl4a               macro
+                    asla
+                    asla
+                    asla
+                    asla
+                    endm
+
+asl4b               macro
+                    aslb
+                    aslb
+                    aslb
+                    aslb
+                    endm
+
+asr4a               macro
+                    asra
+                    asra
+                    asra
+                    asra
+                    endm
+
+asr4b               macro
+                    asrb
+                    asrb
+                    asrb
+                    asrb
+                    endm
+
+lsr4a               macro
+                    lsra
+                    lsra
+                    lsra
+                    lsra
+                    endm
+
+lsr4b               macro
+                    lsrb
+                    lsrb
+                    lsrb
+                    lsrb
+                    endm
+
+lsl4a               macro
+                    asl4a
+                    endm
+
+lsl4b               macro
+                    asl4b
+                    endm
+
+
 ; clear instructions
 clru                macro
                     ldu #0
