@@ -5,7 +5,6 @@
 
 
                     include boomerang.asm
-                    include clear-instructions.asm
                     include convenience.asm
                     include hardware.asm
                     include optimizations.asm

@@ -38,6 +38,31 @@ decs                macro
                     leas -1,s
                     endm
 
+; clear instructions
+clru                macro
+                    ldu #0
+                    endm
+
+clrx                macro
+                    ldx #0
+                    endm
+
+clry                macro
+                    ifpragma 6809
+                      ldy #0
+                    else
+                      tfr 0,y
+                    endc
+                    endm
+
+                    ifpragma no6309conv
+clrq                macro
+                    clrd
+                    clrw
+                    endm
+                    endc
+
+
 MACROS_CONVENIENCE_DEFS equ 1               ; Set flag for macros being loaded
                     endc
 
