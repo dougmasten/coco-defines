@@ -4,13 +4,12 @@
                     ifndef MACROS_ALL_LOADED    ; Load macros only once
 
 
-                    include boomerang.asm
                     include convenience.asm
                     include hardware.asm
                     include optimizations.asm
                     include regcc.asm
-                    include shift.asm
-                    include test-instructions.asm
+                    include repeat.asm
+                    include wait-cycles.asm
 
 
 MACROS_ALL_LOADED   equ 1                   ; Set flag for macros being loaded
