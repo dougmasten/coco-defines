@@ -21,6 +21,7 @@ incs                macro
                     leas 1,s
                     endm
 
+
 ; decrement 16-bit registers
 decx                macro
                     leax -1,x
@@ -37,6 +38,34 @@ decu                macro
 decs                macro
                     leas -1,s
                     endm
+
+
+; test instructions
+tstu                macro
+                    ifpragma 6809
+                      cmpu #0
+                    else
+                      cmpr u,0
+                    endc
+                    endm
+
+tstx                macro
+                    ifpragma 6809
+                      leax ,x
+                    else
+                      cmpx #0
+                    endc
+                    endm
+
+tsty                macro
+                    leay ,y
+                    endm
+
+                    ifpragma no6309conv
+tstq                macro
+                    stq -4,s
+                    endm
+                    endc
 
 ; clear instructions
 clru                macro
