@@ -3,29 +3,6 @@
                     pragma nolist           ; Turn off assembly listing and exclude from symbol list
                     ifndef MACROS_CONVENIENCE_DEFS  ; Load macros only once
 
-                    include repeat.asm
-
-; rotate left in register A
-rotate_left_a       macro
-                    lsla
-                    adca #0
-                    endm
-
-; rotate left in register B
-rotate_left_b       macro
-                    lslb
-                    adcb #0
-                    endm
-
-; swap nibbles in register A
-swap_a              macro
-                    rotate 4,rotate_left_a
-                    endm
-
-; swap nibbles in register B
-swap_b              macro
-                    rotate 4,rotate_left_b
-                    endm
 
 ; increment 16-bit registers
 incx                macro
