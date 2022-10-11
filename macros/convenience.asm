@@ -112,11 +112,17 @@ lsr4b               macro
                     endm
 
 lsl4a               macro
-                    asl4a
+                    lsla
+                    lsla
+                    lsla
+                    lsla
                     endm
 
 lsl4b               macro
-                    asl4b
+                    lslb
+                    lslb
+                    lslb
+                    lslb
                     endm
 
 
