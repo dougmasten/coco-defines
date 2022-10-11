@@ -4,10 +4,7 @@
                     ifndef REGCC_MACROS     ; Load macros only once
 
 
-; make sure defines are included
-                    ifndef REGCC_DEFS
                     include ../defines/regcc-defs.asm
-                    endc
 
 
 ; convenient macros

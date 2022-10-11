@@ -4,9 +4,7 @@
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
                         ifndef MEGA_DEFS    ; Load defines only once
 
-                        ifndef MPI_DEFS
                         include mpi-defs.asm
-                        endc
 
 ; MEGA-mini MPI by Ed Snider
 ; https://thezippsterzone.com/wp-content/uploads/2018/12/MEGAmini-manual.pdf

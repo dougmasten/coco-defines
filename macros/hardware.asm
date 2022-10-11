@@ -5,10 +5,7 @@
                         ifndef HARDWARE_MACROS  ; Load defines only once
 
 
-; make sure defines are included
-                        ifndef SAM_DEFS
                         include ../defines/sam-defs.asm
-                        endc
 
 
 enable_normal_speed     macro
