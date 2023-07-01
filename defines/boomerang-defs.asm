@@ -25,12 +25,12 @@ BOOMERANG_LED           equ $ffef           ; Programmable Tricolor LED on Guard
 
 
 ; Boomerang magic addresses to place device in "special mode"
-BOOMERANG_MAGIC_1       equ $fdfd           ;                                  (READ ONLY)
-BOOMERANG_MAGIC_2       equ $fd55           ;                                  (READ ONLY)
-BOOMERANG_MAGIC_3       equ $fdaa           ;                                  (READ ONLY)
-BOOMERANG_MAGIC_4       equ $fdff           ;                                  (READ ONLY)
-BOOMERANG_MAGIC_5       equ $fd00           ;                                  (READ ONLY)
-BOOMERANG_MAGIC_6       equ $fdff           ;                                  (READ ONLY)
+BOOMERANG_MAGIC_1       equ $fdfd           ; reset lock                       (READ ONLY)
+BOOMERANG_MAGIC_2       equ $fd55           ; combination pattern              (READ ONLY)
+BOOMERANG_MAGIC_3       equ $fdaa           ;    "          "                  (READ ONLY)
+BOOMERANG_MAGIC_4       equ $fdff           ;    "          "                  (READ ONLY)
+BOOMERANG_MAGIC_5       equ $fd00           ; combination unlocked             (READ ONLY)
+BOOMERANG_MAGIC_6       equ $fdff           ; commmand = set flags             (READ ONLY)
 
 
 ; Boomerang "special modes" options
