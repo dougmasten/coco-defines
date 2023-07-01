@@ -7,7 +7,7 @@
                     include optimizations.asm
                     include regcc.asm
                     include repeat.asm
-                    include wait-cycles.asm
+                    include wait.asm
 
 
                     *pragmapop list         ; restore assembly listing to previous state
