@@ -209,7 +209,7 @@ wait macro
 ; wait 21 clock cycles
   ifeq \1-21
   ifpragma 6809
-    pshs cc,b,dp,x,y,u,pc
+    pshs d,dp,x,y,u,pc
     leas 11,s
   else
     pshs cc,d,dp,x,y,u,pc
@@ -231,7 +231,7 @@ wait macro
 ; wait 23 clock cycles
   ifeq \1-23
   ifpragma 6809
-    pshs cc,a,dp,x,y,u,pc
+    pshs d,dp,x,y,u,pc
     nop
     leas 11,s
   else
