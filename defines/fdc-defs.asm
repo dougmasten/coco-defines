@@ -7,17 +7,17 @@
 
 ; Floppy Disk Controller (Western Digital 1793)
 FDC_CTRL                equ $ff40            ; Floppy disk controller control register (Write Only)
-                                             ; Bit 7 - Halt flag: 0=disabled, 1=enabled
+                                             ; Bit 7 - Halt line to CPU flag: 0 = disabled, 1 = enabled
                                              ; Bit 6 - Drive select 3
-                                             ; Bit 5 - Density flag: 0=single, 1=double
-                                             ; Bit 4 - Write precompensation: 0=no precomp, 1=precomp
-                                             ; Bit 3 - Drive motor enable: 0=motors off, 1=motors on
+                                             ; Bit 5 - Density flag: 0 = single, 1 = double
+                                             ; Bit 4 - Write precompensation: 0 = off, 1 = on
+                                             ; Bit 3 - Drive motor enable: 0 = off, 1 = on
                                              ; Bit 2 - Drive select 2
                                              ; Bit 1 - Drive select 1
                                              ; Bit 0 - Drive select 0
 
-FDC_COMMAND             equ $ff48            ; Floppy command register
-FDC_STATUS              equ $ff48            ; Floppy status register
+FDC_COMMAND             equ $ff48            ; FDC command register
+FDC_STATUS              equ $ff48            ; FDC status register
 FDC_TRACK               equ $ff49            ; FDC track register
 FDC_SECTOR              equ $ff4a            ; FDC sector register
 FDC_DATA                equ $ff4b            ; FDC data register
