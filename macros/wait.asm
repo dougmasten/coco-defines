@@ -41,7 +41,7 @@ wait macro
 ; wait 5 clock cycles
   ifeq \1-5
   ifpragma 6809
-    fdb $3400  ; PSHS #0
+    pshs #0  ; requires LWASM 4.21+
   else
     exg s,s
   endc
