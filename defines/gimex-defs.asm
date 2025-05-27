@@ -1,4 +1,4 @@
-  ; gimex-defs.asm
+; gimex-defs.asm
 
                         *pragmapush list    ; Save state of list pragma
                         pragma nolist       ; Turn off assembly listing and exclude from symbol list
