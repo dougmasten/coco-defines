@@ -9,7 +9,7 @@
 
 
 ; Acceleration mode
-GIMEX_SPEED_MAGIC       equ $a5             ; Magic value to select 2.86 MHz speed
+GIMEX_SPEED_MAGIC       equ $5a             ; Magic value to select 2.86 MHz speed
                                             ;
                                             ; Acceleration mode is only supported on DDR firmware with
                                             ; a fast SRAM memory upgrade.
